@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :item_url
       t.string :img_url
       t.integer :rating
+      t.string :color
       t.timestamps
     end
   end

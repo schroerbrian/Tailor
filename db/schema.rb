@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130803180550) do
     t.string   "item_url"
     t.string   "img_url"
     t.integer  "rating"
+    t.string   "color"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
