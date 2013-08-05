@@ -1,0 +1,31 @@
+.heroes-container-1,
+.heroes-container-2,
+.heroes-container-3,
+.heroes-container-4 {
+  border: 1px solid grey;
+  height: 560px;
+}
+
+.heroes-container-1 .heroes-1,
+.heroes-container-2 .heroes-2,
+.heroes-container-3 .heroes-3,
+.heroes-container-4 .heroes-4 {
+  width: 960px;
+  margin: 0 auto 0 auto;
+}
+
+.heroes-container-1,
+.heroes-container-3 {
+  background: white;
+}
+
+.heroes-container-2,
+.heroes-container-4 {
+  background: rgba(250, 250, 248, 1);
+}
+
+.search-bar {
+  width: 480px;
+  position: absolute;
+}
+

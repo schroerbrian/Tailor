@@ -1,21 +1,75 @@
-<h1>Listing venues</h1>
+<div class="venue-hero-container">
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <div class="venue-background">
 
-<% @venues.each do |venue| %>
-  <tr>
-    <td><%= link_to 'Show', venue %></td>
-    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
-    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="venue-info">
+      <img src="" />
+      <h3>Restaurant Name</h3>
+      <p>Address</p>
+      <p>Category</p>
+      <p>Rating</p>
+    </div>
 
-<br />
+    <div class="venue-tags">
+      <h1>#tag1</h1>
+      <h1>#tag2</h1>
+      <h1>#tag3</h1>
+    </div>
 
-<%= link_to 'New Venue', new_venue_path %>
+  </div>
+
+  <div class="weather-background">
+
+    <div class="weather-info">
+      <span class="icon-sun"></span>
+      <h1>Degrees</h1>
+    </div>
+
+    <div class="weather-text">
+      <h3>text text text</h3>
+    </div>
+
+</div>
+
+<div class="venue-items-container">
+
+  <div class="clothes">
+    <h5>Try these clothes</h5>
+
+    <div class="items">
+      <a href="image_url"><img src="h" /></a>
+      <div class="likes">
+        <button>Like</button>
+      </div>
+    </div>
+
+    <div class="items">
+      <a href="image_url"><img src="h" /></a>
+      <div class="likes">
+        <button>Like</button>
+      </div>
+    </div>
+
+    <div class="items">
+      <a href="image_url"><img src="h" /></a>
+      <div class="likes">
+        <button>Like</button>
+      </div>
+    </div>
+
+    <div class="more">
+      <button>More</button>
+      <button>Add</button>
+    </div>
+
+  </div>
+
+  <div class="shoes">
+    <h5>That goes with those shoes</h5>
+  </div>
+
+  <div class="accessories">
+    <h5>...and spiced up by those accessories</h5>
+  </div>
+
+</div>
