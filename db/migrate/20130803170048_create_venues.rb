@@ -7,10 +7,12 @@ class CreateVenues < ActiveRecord::Migration
       t.integer :zip
       t.string :city
       t.string :state
-      t.integer :rating
+      t.float :rating
       t.string :img_url
       t.string :biz_url
       t.timestamps
+
+
     end
   end
 end

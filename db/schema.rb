@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803180550) do
+ActiveRecord::Schema.define(:version => 20130805180905) do
 
   create_table "catalogs", :force => true do |t|
     t.integer  "category_id"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(:version => 20130803180550) do
     t.string   "color"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "likes"
+  end
+
+  create_table "neighborhoods", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.string   "name"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tag_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -53,11 +69,18 @@ ActiveRecord::Schema.define(:version => 20130803180550) do
     t.integer  "zip"
     t.string   "city"
     t.string   "state"
-    t.integer  "rating"
+    t.float    "rating"
     t.string   "img_url"
     t.string   "biz_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "neighborhood_name"
+    t.integer  "neighborhood_id"
+    t.string   "YID"
+    t.string   "snippet_text"
+    t.string   "mobile_url"
   end
+
+  add_index "venues", ["neighborhood_id"], :name => "neighborhood_id_ix"
 
 end

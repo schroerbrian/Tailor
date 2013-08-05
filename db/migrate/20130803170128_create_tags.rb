@@ -4,6 +4,8 @@ class CreateTags < ActiveRecord::Migration
       t.string :name
       t.references :taggable, :polymorphic => true
       t.timestamps
+
+
     end
   end
 end
