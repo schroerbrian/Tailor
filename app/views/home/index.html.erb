@@ -1,83 +1,38 @@
 <section class="heroes-container-1">
   <div class="heroes-1">
 
-    <div class="container">
-
-      <div id="carousel-example-generic" class="carousel slide">
-
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="http://cdn.volkswagen.co.uk/assets/en_gb/images/new_cars/golf_gti_vi/hero.png">
-            <div class="carousel-caption">
-              <h3>Picture is 960x560px</h3>
-            </div>
-          </div>
-          <div class="item">
-            <img src="http://johnathanclover.com/wp-content/uploads/galleries/post-216/Connor-021.jpg">
-            <div class="carousel-caption">
-              <h3>Picture is 960x480</h3>
-            </div>
-          </div>
-          <div class="item">
-             <img src="http://www.macstonephoto.com/picture/macstone_florida_myn-1.jpg?pictureId=15047445&asGalleryImage=true" alt="900x600px">
-             <div class="carousel-caption">
-              <h3>Picture is 960x480</h3>
-             </div>
-           </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-          <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-          <span class="icon-next"></span>
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="search-bar">
-      <%= form_tag(controller: "venues", action: "search", method: "get") do %>
-      <%= text_field_tag(:venue, nil, placeholder: 'search for a venue') %>
-      <%= radio_button_tag(:gender, "men") %>
-      <%= label_tag(:gender_male, "Men") %>
-      <%= radio_button_tag(:gender, "women") %>
-      <%= label_tag(:gender_female, "Women") %>
-      <%= submit_tag("Search") %>
-      <% end %>
-   </div>
+    <%= render 'carousel' %> 
+    <!-- search bar is in carousel partial -->
 
   </div>
 </section>
 
 <section class="heroes-container-2">
   <div class="heroes-2">
-    <h1>Algorithm</h1>
-    <h3>Blue bottle Portland locavore before they sold out pug sustainable fashion axe.</h3>
+    <span class="blurb-2">
+      <h1>Tailored inspiration</h1>
+      <h3>Our style algorithm takes every factor into account: venue location, crowd and even weather. We pay attention so you don't have to.</h3>
+    </span>
+    <img src='assets/shirts.png' alt='shirts'>
   </div>
 </section>
 
 <section class="heroes-container-3">
   <div class="heroes-3">
-    <h1>Zappos</h1>
-    <h3>Direct trade chillwave pop-up try-hard stumptown Terry Richardson.</h3>
+    <img src='assets/zappos_matching.png' alt='shirts'>
+    <span class="blurb-3">
+      <h1>Powered by Zappos</h1>
+      <h3>We've searched through the eclectic Zappo's catalog curating looks for every place and any occasion.</h3>
+    <span>
   </div>
 </section>
 
 <section class="heroes-container-4">
   <div class="heroes-4">
-    <h1>Tag</h1>
-    <h3>Authentic disrupt ennui, polaroid dreamcatcher blue bottle quinoa 90's salvia.</h3>
-    <p>
+    <span class="blurb-4">
+      <h1>Tagged </h1>
+      <h3>Authentic disrupt ennui, polaroid dreamcatcher blue bottle quinoa 90's salvia.</h3>
+      <p>
+    <span/>
   </div>
 </section>
