@@ -65,4 +65,8 @@
   background: white;
 }
 
+#ui-id-1 {
+  height: 120px;
+  overflow: scroll;
+}
 
