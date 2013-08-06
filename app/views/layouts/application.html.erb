@@ -6,15 +6,19 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato|Wire+One|Roboto+Slab:100,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <header class="menubar-container">
     <div class="menubar">
       <div class="nav-text">
-        <a href="/">Home</a>
-        <a href="/team">Team</a>
-        <p>Contact</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </div>
     </div>
   </header>
@@ -22,7 +26,7 @@
   <header class="header-container">
     <div class="header">
       <div class="logo">
-        <div>Tailor</div>
+        <a href="/"><h1>/ T A I L O R /</h1></a>
       </div>
       <div class="nav-buttons">
         <a href="/"><span class="entypo-search"></span></a>
@@ -30,7 +34,7 @@
     </div>
   </header>
 
-<%= yield %>
+  <%= yield %>
 
   <footer class="footer">
     <p>powered by Zappos</p>
@@ -38,3 +42,21 @@
 
 </body>
 </html>
+
+<script>
+
+(function($){
+  $(function(){
+    var $itemContent = $(".menubar-container");
+    $(".logo").click(function(e){
+      e.preventDefault();
+      if($itemContent.hasClass('opened')){
+        $itemContent.slideUp('slow').toggleClass('closed opened');
+      } else {
+        $itemContent.slideDown('slow').toggleClass('closed opened');
+      }
+    });
+  });
+})(jQuery);
+
+</script>
