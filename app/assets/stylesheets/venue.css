@@ -75,7 +75,7 @@
 
 .venue-tab .details,
 .venue-tab .weather,
-.venue-tab .reviews {
+.venue-tab .tags {
   width: 100%;
   height: 100%;
 }
@@ -131,14 +131,11 @@
   float: left;
 }
 
-.details div:nth-child(3) ul {
-  list-style: none;
-}
-
-.details div:nth-child(3) ul h1 {
+.details div:nth-child(3) p {
   text-align: center;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 /*weather info*/
@@ -147,22 +144,28 @@
   display: none;
 }
 
-/*reviews*/
+/*tags*/
 
-.venue-tab .reviews {
-  display: block;
+.venue-tab .tags {
+  display: none;
 }
 
-.reviews div {
-  width: 100%;
-  height: 100%;
+.tags div {
   float: left;
+  margin: 5%;
 }
 
-.reviews div h3 {
-  font-weight: 400;
-  text-align: center;
-  padding: 80px;
+.tags div ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.tags div ul li{
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  display: inline;
 }
 
 /*container for list of items*/
