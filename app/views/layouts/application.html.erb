@@ -25,7 +25,7 @@
   <header class="header-container">
     <div class="header">
       <div class="logo">
-        <h1>/ T A I L O R /</h1>
+        <a href="/"><h1>/ T A I L O R /</h1></a>
       </div>
       <div class="nav-buttons">
         <a href="/"><span class="entypo-search"></span></a>
@@ -41,3 +41,21 @@
 
 </body>
 </html>
+
+<script>
+
+(function($){
+  $(function(){
+    var $itemContent = $(".menubar-container");
+    $(".logo").click(function(e){
+      e.preventDefault();
+      if($itemContent.hasClass('opened')){
+        $itemContent.slideUp('slow').toggleClass('closed opened');
+      } else {
+        $itemContent.slideDown('slow').toggleClass('closed opened');
+      }
+    });
+  });
+})(jQuery);
+
+</script>

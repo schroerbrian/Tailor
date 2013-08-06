@@ -4,8 +4,6 @@
   width: 100%;
   height: 60px;
   background: rgba(241, 196, 15,1.0);
-/*  border-top: 1px solid black;
-  border-bottom: 1px solid black;*/
   position: relative;
 }
 
@@ -61,19 +59,19 @@
   background-color: rgba(250,250,250,1);
   display: none;
 }
-/*
+
 .venue-tab:before {
   content:"";
   display:block;
   position:absolute;
-  top:95%;
+  top:97%;
   left:0;
   right:0;
   bottom:0;
-  border-top: 1px solid black;
+  border-top: 5px solid black;
   background: rgba(255,255,255,1);
   z-index: 999999999;
-}*/
+}
 
 .venue-tab .details,
 .venue-tab .weather,
@@ -182,13 +180,27 @@
   overflow: hidden;
 }
 
-.items {
-  width: 280px;
+
+/*items and items container*/
+
+.items-container {
+  width: 95%;
+  float: left;
+}
+
+.items-container .items-block {
+  width: 33%;
   float: left;
   height: 400px;
-  margin: 5px 5px 25px 5px;
-  overflow: hidden;
+  margin: 10px 0 25px 0;
+}
+
+.items {
+  width: 90%;
+  height: 100%;
   position: relative;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .items img {
@@ -217,9 +229,12 @@
   color: white;
 }
 
+
+/*more clickables*/
+
 .more {
   float: right;
-  width: 50px;
+  width: 5%;
 }
 
 .more [class*="entypo-"]:before {
