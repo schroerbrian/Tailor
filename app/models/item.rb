@@ -29,22 +29,22 @@ class Item < ActiveRecord::Base
   end
 
   def self.sf_styles(gender, category)
-  options = {:gender => gender, :category => category}
-  request = hot_items(options)
-  results = request['results']
-  results.each { |r|
-    i = Item.find_by_name(r['productName'])
-    if i.nil?
-     i = Item.create(
-        :name => r['productName'],
-        :brand => r['brandName'],
-        :price => r['price'],
-        :item_url => r['defaultProductUrl'],
-        :img_url => image(r['productId']),
-        :gender => gender)
-      i.categories << Category.find_by_name(category)
+    options = {:gender => gender, :category => category}
+    request = hot_items(options)
+    results = request['results']
+    results.each { |r|
+      i = Item.find_by_name(r['productName'])
+      if i.nil?
+       i = Item.create(
+          :name => r['productName'],
+          :brand => r['brandName'],
+          :price => r['price'],
+          :item_url => r['defaultProductUrl'],
+          :img_url => image(r['productId']),
+          :gender => gender)
+        i.categories << Category.find_by_name(category)
+      end
+      }
     end
-    }
-  end
 
 end
