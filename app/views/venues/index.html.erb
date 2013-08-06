@@ -1,11 +1,11 @@
 <div class="venue-menu-container">
 
   <div class="venue-menu">
-    <h3>THE PHONE BOOTH</h3>
+    <h3><%= @venue.name.upcase %></h3>
     <ul>
       <li><a href="#">Details</a></li>
       <li><a href="#">Weather</a></li>
-      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Hype</a></li>
     </ul>
   </div>
 
@@ -15,18 +15,18 @@
 
   <div class="details">
     <div>
-      <img src="http://blogs-images.forbes.com/tomiogeron/files/2011/11/1115_cafe-coupa_1024x768.jpeg" />
+      <img src="<%= @venue.img_url %>" />
     </div>
     <div>
       <ul>
-        <li><p>Bar Restaurant</p></li>
-        <li><p>255 Union Street, San Francisco</p></li>
-        <li><p>$$$</p></li>
+        <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
+        <li><p><%= @venue.neighborhood_name %></p></li>
+        <li><p><%= @venue.rating.inspect %></p></li>
     </div>
 
     <div>
       <ul>
-        <li><h1>#hipster</h1></li>
+        <li><h1><%= @venue.taggings[1]['name'].inspect %></h1></li>
         </li><h1>#casual</h1></li>
         </li><h1>#trendy</h1></li>
       </ul>
@@ -35,20 +35,14 @@
   </div>
 
   <div class="weather">
+    <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
+
   </div>
 
   <div class="reviews">
 
     <div>
-      <h3>/Awesome reviews place blah blah/</h3>
-    </div>
-
-    <div>
-      <h3>/Awesome reviews place blah blah/</h3>
-    </div>
-
-    <div>
-      <h3>/Awesome reviews place blah blah/</h3>
+      <h3><%=@venue.snippet_text %></h3>
     </div>
 
   </div>
