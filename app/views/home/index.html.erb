@@ -36,3 +36,17 @@
     <span/>
   </div>
 </section>
+
+
+
+<script src="assets/bootstrap.js"></script>
+
+<%= javascript_tag do %>
+    var venueNames = <%= @venue_names.to_json.html_safe %>
+<% end %>
+
+<script>
+  $("#venue").autocomplete({
+    source: venueNames
+  });
+</script>
