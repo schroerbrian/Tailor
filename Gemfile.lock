@@ -142,6 +142,7 @@ DEPENDENCIES
   factory_girl_rails
   foreman
   jquery-rails
+  json
   pg
   pry
   pry-rails

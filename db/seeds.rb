@@ -1,5 +1,7 @@
 Tag.delete_all
 Neighborhood.delete_all
+Category.delete_all
+Neighborhood.delete_all
 
 t1 = Tag.create(:name => 'chic')
 t1a = Tag.create(:name => 'classic')
@@ -69,5 +71,23 @@ n28 = Neighborhood.create(:name => 'Presidio')
 n29 = Neighborhood.create(:name => "Fisherman's Wharf")
 n30 = Neighborhood.create(:name => 'Lower Pacific Heights')
 n31 = Neighborhood.create(:name => 'NOPA')
+
+c1 = Category.create(:name => 'shirt')
+c2 = Category.create(:name => 'pant')
+c3 = Category.create(:name => 'socks')
+c4 = Category.create(:name => 'accessories')
+c5 = Category.create(:name => 'coat')
+c6 = Category.create(:name => 't-shirt')
+c7 = Category.create(:name => 'slacks')
+c8 = Category.create(:name => 'jacket')
+c9 = Category.create(:name => 'suit')
+c10 = Category.create(:name => 'hoodie')
+c11 = Category.create(:name => 'hat')
+c12 = Category.create(:name => 'belt')
+c13 = Category.create(:name => 'shoes')
+c14 = Category.create(:name => 'sneakers')
+c15 = Category.create(:name => 'skirt')
+c16 = Category.create(:name => 'dress')
+c17 = Category.create(:name => 'blouse')
 
 
