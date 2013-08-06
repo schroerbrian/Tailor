@@ -1,75 +1,150 @@
-<div class="venue-hero-container">
+<div class="venue-menu-container">
 
-  <div class="venue-background">
+  <div class="venue-menu">
+    <h3>THE PHONE BOOTH</h3>
+    <ul>
+      <li><a href="#">Details</a></li>
+      <li><a href="#">Weather</a></li>
+      <li><a href="#">Reviews</a></li>
+    </ul>
+  </div>
 
-    <div class="venue-info">
-      <img src="" />
-      <h3>Restaurant Name</h3>
-      <p>Address</p>
-      <p>Category</p>
-      <p>Rating</p>
+</div>
+
+<div class="venue-tab">
+
+  <div class="details">
+    <div>
+      <img src="http://blogs-images.forbes.com/tomiogeron/files/2011/11/1115_cafe-coupa_1024x768.jpeg" />
+    </div>
+    <div>
+      <ul>
+        <li><p>Bar Restaurant</p></li>
+        <li><p>255 Union Street, San Francisco</p></li>
+        <li><p>$$$</p></li>
     </div>
 
-    <div class="venue-tags">
-      <h1>#tag1</h1>
-      <h1>#tag2</h1>
-      <h1>#tag3</h1>
+    <div>
+      <ul>
+        <li><h1>#hipster</h1></li>
+        </li><h1>#casual</h1></li>
+        </li><h1>#trendy</h1></li>
+      </ul>
     </div>
 
   </div>
 
-  <div class="weather-background">
+  <div class="weather">
+  </div>
 
-    <div class="weather-info">
-      <span class="icon-sun"></span>
-      <h1>Degrees</h1>
+  <div class="reviews">
+
+    <div>
+      <h3>/Awesome reviews place blah blah/</h3>
     </div>
 
-    <div class="weather-text">
-      <h3>text text text</h3>
+    <div>
+      <h3>/Awesome reviews place blah blah/</h3>
     </div>
+
+    <div>
+      <h3>/Awesome reviews place blah blah/</h3>
+    </div>
+
+  </div>
 
 </div>
 
-<div class="venue-items-container">
+
+
+<section class="venue-items-container">
 
   <div class="clothes">
-    <h5>Try these clothes</h5>
+    <h3>Try these clothes</h3>
 
     <div class="items">
-      <a href="image_url"><img src="h" /></a>
+      <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/d42652d7-2472-401c-85f7-f7c792dee96d.jpg" /></a>
       <div class="likes">
         <button>Like</button>
       </div>
     </div>
 
     <div class="items">
-      <a href="image_url"><img src="h" /></a>
+      <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/2cd3213a-cc49-43d9-92e5-11322931be8c.jpg" /></a>
       <div class="likes">
         <button>Like</button>
       </div>
     </div>
 
     <div class="items">
-      <a href="image_url"><img src="h" /></a>
+      <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/65ca1960-82e2-4fb7-ad06-5200b499da7a.jpg" /></a>
+
       <div class="likes">
         <button>Like</button>
       </div>
     </div>
 
     <div class="more">
-      <button>More</button>
-      <button>Add</button>
+      <a href="/"><span class="entypo-right-open-big"></span></a></br>
+      <a href="/items/new">+</a>
     </div>
 
   </div>
 
+
   <div class="shoes">
-    <h5>That goes with those shoes</h5>
+    <h3>That goes with those shoes</h3>
+
   </div>
 
   <div class="accessories">
-    <h5>...and spiced up by those accessories</h5>
+    <h3>...and spiced up by those accessories</h3>
   </div>
 
+  </section>
+
 </div>
+
+<script>
+
+$('.venue-menu ul li:nth-child(1)').click(function(event){
+  event.preventDefault();
+  $('.weather').css('display', 'none');
+  $('.reviews').css('display', 'none');
+  $('.venue-tab').fadeIn();
+  $('.details').fadeIn();
+
+  $('.venue-menu ul li:nth-child(1)').css('background', 'rgba(250,250,250,1)');
+  $('.venue-menu ul li:nth-child(2)').css('background', 'transparent');
+  $('.venue-menu ul li:nth-child(3)').css('background', 'transparent');
+
+});
+
+$('.venue-menu ul li:nth-child(2)').click(function(event){
+  event.preventDefault();
+  $('.details').css('display', 'none');
+  $('.reviews').css('display', 'none');
+  $('.venue-tab').fadeIn();
+  $('.weather').fadeIn();
+
+  $('.venue-menu ul li:nth-child(1)').css('background', 'transparent');
+  $('.venue-menu ul li:nth-child(2)').css('background', 'rgba(250,250,250,1)');
+  $('.venue-menu ul li:nth-child(3)').css('background', 'transparent');
+
+});
+
+$('.venue-menu ul li:nth-child(3)').click(function(event){
+  event.preventDefault();
+  $('.details').css('display', 'none');
+  $('.weather').css('display', 'none');
+  $('.venue-tab').fadeIn();
+  $('.reviews').fadeIn();
+
+  $('.venue-menu ul li:nth-child(1)').css('background', 'transparent');
+  $('.venue-menu ul li:nth-child(2)').css('background', 'transparent');
+  $('.venue-menu ul li:nth-child(3)').css('background', 'rgba(250,250,250,1)');
+});
+
+</script>
+
+

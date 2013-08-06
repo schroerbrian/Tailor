@@ -8,10 +8,12 @@ class VenuesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @venues }
     end
+
+    # renders venue found from search
+    # includes tags annd items where gender is the param
+
   end
 
-  # GET /venues/1
-  # GET /venues/1.json
   def show
     @venue = Venue.find(params[:id])
 
@@ -19,42 +21,9 @@ class VenuesController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @venue }
     end
+
   end
 
-  # GET /venues/new
-  # GET /venues/new.json
-  def new
-    @venue = Venue.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @venue }
-    end
-  end
-
-  # GET /venues/1/edit
-  def edit
-    @venue = Venue.find(params[:id])
-  end
-
-  # POST /venues
-  # POST /venues.json
-  def create
-    @venue = Venue.new(params[:venue])
-
-    respond_to do |format|
-      if @venue.save
-        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
-        format.json { render json: @venue, status: :created, location: @venue }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /venues/1
-  # PUT /venues/1.json
   def update
     @venue = Venue.find(params[:id])
 
@@ -69,19 +38,11 @@ class VenuesController < ApplicationController
     end
   end
 
-  # DELETE /venues/1
-  # DELETE /venues/1.json
-  def destroy
-    @venue = Venue.find(params[:id])
-    @venue.destroy
-
-    respond_to do |format|
-      format.html { redirect_to venues_url }
-      format.json { head :no_content }
-    end
-  end
-
   def search
+
+    # search from home page will take 2 params, one for gender and one for venue to
+    # return a json file with all the items
+
   end
 
 
