@@ -1,13 +1,25 @@
-<%= javascript_include_tag "jquery", "jquery_ujs" %>
-<% form_tag items_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+<%= @zappos_results.inspect %>
+<%= @tag %>
 
-<div class="selectItem">
-  <%= render 'items' %>
-</div>
+<ul>
+  <% @zappos_results.each do |z| %>
+    <li>
+      <img src="<%= z[:item][:img_url] %>" />
+      <%= z[:item][:name] %>
+      <%= z[:item][:brand] %>
+      <%= z[:item][:price] %>
 
-<p><%= link_to "New Item", new_item_path %></p>
+      <%= form_for(@item) do |f| %>
+        <div class="hidden"><%= f.text_field :name, :value => z[:item][:name] %></div>
+        <div class="hidden"><%= f.text_field :brand, :value => z[:item][:brand]  %></div>
+        <div class="hidden"><%= f.text_field :price, :value => z[:item][:price]  %></div>
+        <div class="hidden"><%= f.text_field :item_url, :value => z[:item][:item_url]  %></div>
+        <div class="hidden"><%= f.text_field :img_url, :value => z[:item][:img_url]  %></div>
+        <div class="hidden"><%= f.text_field :gender, :value => z[:item][:gender]  %></div>
+        <div class="hidden"><%= f.text_field :gender, :value => z[:item][:gender]  %></div>
+        <%= f.submit %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
