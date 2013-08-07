@@ -1,5 +1,5 @@
 .add {
-  width: 100%;
+  width: 100.88%;
   display: none;
   background: rgba(220,220,220,1);
   position: absolute;
@@ -8,6 +8,16 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.add-text{
+  padding-left: 2%;
+  margin-top: 3%;
+  line-height: 100%;
+}
+
+.add h2, .add h3 {
+  color: rgba(61, 61, 61, 1);
 }
 
 /*items container for 12 pieces*/

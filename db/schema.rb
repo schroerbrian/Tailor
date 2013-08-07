@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805180905) do
+ActiveRecord::Schema.define(:version => 20130806163932) do
 
   create_table "catalogs", :force => true do |t|
     t.integer  "category_id"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(:version => 20130805180905) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "likes"
+    t.string   "gender"
+    t.text     "prefs"
   end
 
   create_table "neighborhoods", :force => true do |t|

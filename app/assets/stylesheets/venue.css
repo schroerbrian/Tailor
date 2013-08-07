@@ -37,7 +37,7 @@
 }
 
 .venue-menu h3 {
-  left: 0;
+  margin-left: -8px;
   display: inline;
   line-height: 60px;
   font-size: 28px;

@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
+
   def index
-    @items = Item.all
+   data = Zappos.new
+   @items = data.info("f", "shoes")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,14 +14,6 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   # GET /items/1.json
-  def show
-    @item = Item.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @item }
-    end
-  end
 
   # GET /items/new
   # GET /items/new.json
@@ -32,10 +26,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/1/edit
-  def edit
-    @item = Item.find(params[:id])
-  end
+
 
   # POST /items
   # POST /items.json
