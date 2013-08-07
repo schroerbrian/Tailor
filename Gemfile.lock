@@ -189,6 +189,7 @@ DEPENDENCIES
   foreman
   guard-rspec
   jquery-rails
+  json
   pg
   pry
   pry-rails

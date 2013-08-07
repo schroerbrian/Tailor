@@ -58,5 +58,8 @@ module Taylor
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    #caching
+    config.cache_store = :memory_store
   end
 end
