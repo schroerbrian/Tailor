@@ -2,34 +2,23 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
 
-  def index
-   data = Zappos.new
-   @items = data.info("f", "shoes")
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @items }
-    end
+  def index
+  @items = Item.all
+
+   render :json => {:success => true, :html => :index_html}
   end
 
-  # GET /items/1
-  # GET /items/1.json
-
-  # GET /items/new
-  # GET /items/new.json
   def new
     @item = Item.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @item }
+      format.html
+      format.js
     end
   end
 
 
-
-  # POST /items
-  # POST /items.json
   def create
     @item = Item.new(params[:item])
 
@@ -37,6 +26,7 @@ class ItemsController < ApplicationController
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @item.errors, status: :unprocessable_entity }

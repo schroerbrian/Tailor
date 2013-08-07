@@ -1,1 +1,13 @@
-<%= @items %>
+<%= javascript_include_tag "jquery", "jquery_ujs" %>
+<% form_tag items_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div class="selectItem">
+  <%= render 'items' %>
+</div>
+
+<p><%= link_to "New Item", new_item_path %></p>

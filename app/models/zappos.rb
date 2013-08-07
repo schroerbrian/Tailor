@@ -4,13 +4,13 @@ require 'pstore'
 class Zappos
   attr_accessor :info, :results, :gender, :category
 
-  def info(gender, category, info=[])
+  def zap(gender, category, info=[])
    @info = info
    options = {:gender => gender, :category => category}
    request = hot_items(options)
    results = request['results']
-   results.each_with_index { |r,index|
-                    @info << { :index => index, :item => {
+   results.each { |r|
+                    @info << { :item => {
                     :name => r['productName'],
                     :brand => r['brandName'],
                     :price => r['price'],
