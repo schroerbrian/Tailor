@@ -27,7 +27,7 @@
   <header class="header-container">
     <div class="header">
       <div class="nav-buttons">
-        <a href="/"><span class="entypo-search"></span></a>
+        <a href="/"><span class="entypo-menu"></span></a>
       </div>
       <div class="logo">
         <a href="/"><h1>/ T A I L O R /</h1></a>
@@ -36,6 +36,10 @@
   </header>
 
   <%= yield %>
+
+  <div id="wrap">
+    <a href="#top" id="top-link"><span class="entypo-up-open-big"></span></a>
+  </div>
 
   <footer class="footer">
     <p>/ T A I L O R /  is powered by Yelp & Zappos</p>
@@ -49,7 +53,7 @@
 (function($){
   $(function(){
     var $itemContent = $(".menubar-container");
-    $(".logo h1").click(function(e){
+    $(".entypo-menu").click(function(e){
       e.preventDefault();
       if($itemContent.hasClass('opened')){
         $itemContent.slideUp('slow').toggleClass('closed opened');
@@ -61,3 +65,45 @@
 })(jQuery);
 
 </script>
+
+<script>
+jQuery.fn.topLink = function(settings) {
+  settings = jQuery.extend({
+    min: 1,
+    fadeSpeed: 100
+  }, settings);
+  return this.each(function() {
+    //listen for scroll
+    var el = jQuery(this);
+    el.hide(); //in case the user forgot
+    jQuery(window).scroll(function() {
+      if(jQuery(window).scrollTop() >= settings.min)
+      {
+        el.fadeIn(settings.fadeSpeed);
+      }
+      else
+      {
+        el.fadeOut(settings.fadeSpeed);
+      }
+    });
+  });
+};
+
+//usage w/ smoothscroll
+jQuery(document).ready(function() {
+  //set the link
+  jQuery('#top-link').topLink({
+    min: 500,
+    fadeSpeed: 100
+  });
+  //smoothscroll
+  jQuery('#top-link').click(function(r) {
+    jQuery("html, body").animate({ scrollTop: 0 }, 300);
+  });
+});
+
+</script>
+
+
+
+
