@@ -17,10 +17,11 @@ class VenuesController < ApplicationController
     @param = params
     @title = params[:venue]
     @gender = params[:gender]
+    @venue = Venue.find_by_name(params[:venue])
 
     @weather = wunderweather
 
-    if @venue = Venue.find_by_name(@title)
+    if @venue  #check w ian
       render 'index'
     else
       redirect_to '/'
