@@ -4,13 +4,18 @@ require 'pstore'
 class Zappos
   attr_accessor :info, :results, :gender, :category
 
-  def info(gender, category, info=[])
+  def zap(gender, category, info=[])
    @info = info
    options = {:gender => gender, :category => category}
    request = hot_items(options)
    results = request['results']
-   results.each_with_index { |r,index|
-                    @info << { :index => index, :item => {
+   if results.empty?
+     options = {:gender => "n", :category => category}
+     request = hot_items(options)
+     results = request['results']
+   end
+   results.each { |r|
+                  @info <<  { :item => {
                     :name => r['productName'],
                     :brand => r['brandName'],
                     :price => r['price'],
@@ -24,7 +29,11 @@ class Zappos
   def hot_items(options={})
     gender = options[:gender]
     category = options[:category]
-    filter = '&filters={"gender":'+'"'+"#{gender}" +'"'+  ',"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
+    if gender != 'n'
+      filter = '&filters={"gender":'+'"'+"#{gender}" +'"'+  ',"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
+    else
+      filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
+    end
     url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=10&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)

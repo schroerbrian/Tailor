@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806163932) do
+ActiveRecord::Schema.define(:version => 20130807161327) do
 
   create_table "catalogs", :force => true do |t|
     t.integer  "category_id"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130806163932) do
     t.string   "YID"
     t.string   "snippet_text"
     t.string   "mobile_url"
+    t.string   "closed"
   end
 
   add_index "venues", ["neighborhood_id"], :name => "neighborhood_id_ix"
