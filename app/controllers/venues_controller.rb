@@ -2,15 +2,6 @@ class VenuesController < ApplicationController
   include VenuesHelper
 
   def index
-    # @venues = Venue.all
-
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @venues }
-    # end
-    # renders venue found from search
-    # includes tags annd items where gender is the param
-
   end
 
   def search

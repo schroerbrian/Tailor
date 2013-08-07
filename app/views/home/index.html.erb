@@ -7,33 +7,60 @@
   </div>
 </section>
 
+<div class="search-container">
+
+  <div class="search">
+    <div class='search-bar'>
+      <%= form_tag(controller: "venues", action: "search", method: "get") do %>
+      <%= text_field_tag(:venue, nil, placeholder: 'Where do you want to go?') %>
+      <span><%= label_tag(:gender_male, "M") %><%= radio_button_tag(:gender, "man") %></span>
+      <span><%= label_tag(:gender_female, "F") %><%= radio_button_tag(:gender, "woman") %></span>
+      <br/>
+    </div>
+      <%= submit_tag("SEARCH") %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
 <section class="heroes-container-2">
   <div class="heroes-2">
-    <span class="blurb-2">
+    <div class="blurb-2">
       <h1>Tailored inspiration</h1>
-      <h3>Our style algorithm takes every factor into account: venue location, crowd and even weather. We pay attention so you don't have to.</h3>
-    </span>
-    <img src='assets/shirts.png' alt='shirts'>
+      <h3>/ Intelligent algorithm that takes every factor into account: venue location, crowd and even weather. We pay attention so you don't have to /</h3>
+    </div>
+    <div class="image-2">
+      <img src='assets/shirts.png' alt='shirts'>
+    </div>
   </div>
 </section>
 
 <section class="heroes-container-3">
   <div class="heroes-3">
-    <img src='assets/zappos_matching.png' alt='shirts'>
-    <span class="blurb-3">
+
+    <div class="image-3">
+      <img src='assets/mac.png' alt='shirts'>
+    </div>
+
+    <div class="blurb-3">
       <h1>Powered by Zappos</h1>
-      <h3>We've searched through the eclectic Zappo's catalog curating looks for every place and any occasion.</h3>
-    <span>
+      <h3>/ Thousands of clothing items from Zappos curated under one view /</h3>
+    <div>
   </div>
 </section>
 
 <section class="heroes-container-4">
   <div class="heroes-4">
-    <span class="blurb-4">
-      <h1>Tagged </h1>
-      <h3>Authentic disrupt ennui, polaroid dreamcatcher blue bottle quinoa 90's salvia.</h3>
-      <p>
-    <span/>
+    <div class="blurb-4">
+      <h1>Tick Tock Tag</h1>
+      <h3>/ Are you a fashionista? Tag your outfits to your favorite venues /</h3>
+    </div>
+    <div class="image-4">
+      <img src="assets/tags.png" />
+    </div>
+
   </div>
 </section>
 

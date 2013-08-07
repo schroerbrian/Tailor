@@ -1,115 +1,61 @@
-<div class="venue-menu-container">
+<div class="fixed-top">
+  <div class="venue-menu-container">
 
-  <div class="venue-menu">
-    <h3><%= @venue.name.upcase %></h3>
-    <ul>
-      <li><a href="#">Details</a></li>
-      <li><a href="#">Weather</a></li>
-      <li><a href="#">Tags</a></li>
-    </ul>
-  </div>
-
-</div>
-
-<div class="venue-tab">
-
-  <div class="details">
-
-    <div>
-      <img src="<%= @venue.img_url %>" />
-    </div>
-
-    <div>
+    <div class="venue-menu">
+      <h3><%= @venue.name.upcase %></h3>
       <ul>
-        <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
-        <li><p><%= @venue.neighborhood_name %></p></li>
-        <li><p><%= @venue.rating.inspect %></p></li>
-    </div>
-
-    <div>
-      <p>/ <%=@venue.snippet_text %> /</p>
-    </div>
-
-  </div>
-
-  <div class="weather">
-    <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
-
-  </div>
-
-  <div class="tags">
-
-
-    <div>
-      <ul>
-        <% @venue.tags.each do |tag| %>
-        <li>#<%= tag['name'] %>   </li>
-        <% end %>
+        <li><a href="#">Details</a></li>
+        <li><a href="#">Weather</a></li>
+        <li><a href="#">Tags</a></li>
       </ul>
     </div>
 
   </div>
 
+  <%= render 'tab' %>
 </div>
 
 
-
-<section class="venue-items-container">
-
-  <div class="clothes">
-    <h3>Try these clothes</h3>
-
-    <div class="items-container">
-
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/d42652d7-2472-401c-85f7-f7c792dee96d.jpg" /></a>
-          <div class="likes">
-            <button>Like</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/2cd3213a-cc49-43d9-92e5-11322931be8c.jpg" /></a>
-          <div class="likes">
-            <button>Like</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/65ca1960-82e2-4fb7-ad06-5200b499da7a.jpg" /></a>
-
-          <div class="likes">
-            <button>Like</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="more">
-      <a href="/"><span class="entypo-right-open-big"></span></a></br>
-      <a href="/items/new">+</a>
-    </div>
-
-  </div>
-
-
-  <div class="shoes">
-    <h3>That goes with those shoes</h3>
-
-  </div>
-
-  <div class="accessories">
-    <h3>...and spiced up by those accessories</h3>
-  </div>
-
+<div class="venue-content">
+  <section class="venue-items-container">
+    <%= render 'show' %>
+    <%= render 'add' %>
   </section>
-
 </div>
+
+
+
+
+<!-- scripts -->
+
+<script>
+
+  $('.more a:nth-child(2)').click(function(event){
+    event.preventDefault();
+    $('.add').fadeIn();
+    console.log('hahaha');
+  });
+
+</script>
+
+<script>
+
+  function fixDiv() {
+    var $cache = $('.fixed-top');
+
+    if ($(window).scrollTop() > 120) {
+      $cache.css({'position': 'fixed', 'top': '0'});
+      $('.venue-content').css('margin-top','50px');
+    } else {
+      $cache.css({'position': 'relative', 'top': 'auto'});
+      $('.venue-content').css('margin-top','0');
+    }
+  }
+
+  $(window).scroll(fixDiv);
+
+  fixDiv();
+</script>
 
 <script>
 

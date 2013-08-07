@@ -82,8 +82,9 @@ a:link, a:visited {
 /*header*/
 .header-container {
   width: 100%;
-  height: 120px;
-  background: rgba(250,250,250,1);
+  height: 118px;
+  background: rgba(245,245,245,0);
+  border-bottom: 2px solid black;
 }
 
 .header-container .header {
@@ -110,15 +111,24 @@ a:link, a:visited {
   -ms-user-select: none;
 }
 
-.header-container .nav-buttons {
+.nav-buttons {
   width: 70px;
-  right: 0;
-  display: inline;
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 20%;
+  z-index: 99999999;
+
 }
 
 .footer {
-  border: 1px solid black;
   width: 100%;
-  height: 30px;
+  height: 50px;
   text-align: center;
+  background: rgba(40,40,40,1);
+}
+
+.footer p {
+  color: white;
+  line-height: 50px;
 }
