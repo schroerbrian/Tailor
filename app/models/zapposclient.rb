@@ -39,15 +39,12 @@ class Zapposclient
     else
       filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
     end
-    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=20&key=' + "#{ENV['ZAPPOS_KEY']}"
+    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)
   end
 
   def image(id)
-    # "http://www.zappos.com/images/z/2/0/6/7/9/4/2067949-d-THUMBNAIL.jpg",
-    # "styleId"=>"2067949"
-    #http://www.zappos.com/images/z/1/4/8/7/8/7/1487877-p-DETAILED.jpg
     slash_id = id.split(//).shift(id.length-1)
     slashed_string = slash_id.inject("") { |n,l| n + l + '/'}
     url = "http://www.zappos.com/images/z/" + "#{slashed_string}" + "#{id}" + "-p-DETAILED.jpg"
