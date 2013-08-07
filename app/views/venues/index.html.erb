@@ -15,6 +15,7 @@
   <%= render 'tab' %>
 </div>
 
+<%= render 'add-tab' %>
 
 <div class="venue-content">
   <section class="venue-items-container">
@@ -108,9 +109,10 @@ $('.venue-tab').click(function(event){
 $(".add-tags").click(function(){
   event.preventDefault();
   $(".add").fadeIn(1000);
+  %(".fixed-top-add-tab.css")
 });
 
-$('html').click(function(event){
+$('body').click(function(){
   event.preventDefault();
   $('.add').fadeOut(1000);
 });
@@ -118,48 +120,20 @@ $('html').click(function(event){
 $('.add-tags').click(function(event){
     event.stopPropagation();
 });
+
+
 </script>
 
 <script>
 //change header when .add div is displayed
 
 $(document).ready(function(){
-
- if ($('.add').css('display') !== 'none') {
     console.log("hi"); 
-}
   });
 
-// $(document).ready(function(){
-//   if ($('div.x').css('height') === 'auto') {
-//     $('.y').removeClass('a');
-//   }   
-
-// });
-
-
-
-  // translucentHeader();
-    // $cache.css({'position': 'fixed', 'top': '0'});
-  //   $('.venue-content').css('margin-top','50px');
-  // } else {
-  //   $cache.css({'position': 'relative', 'top': 'auto'});
-  //   $('.venue-content').css('margin-top','0');
-
-
-
-// $(window).scroll(fixDiv);
-
-// fixDiv();
 
 </script>
 
 
-<!-- some bullshit written by an idiot
 
-$('.more a:nth-child(2)').click(function(event){
-  event.preventDefault();
-  $('.add').fadeIn();
-  console.log('hahaha');
 
-}); -->
