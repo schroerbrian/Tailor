@@ -15,7 +15,7 @@ namespace :yelpdata do
            :term => "#{t.name} bar",
            :city => 'San Francisco',
            :neighborhood => n.name,
-           :limit => 1,
+           :limit => 20,
            :consumer_key => ENV['YELP_CONSUMER_KEY'],
            :consumer_secret => ENV['YELP_CONSUMER_SECRET'],
            :token => ENV['YELP_TOKEN'],
