@@ -1,18 +1,18 @@
-.fixed-top-add-tab {
+.tab-fixed-top-add {
   width: 100%;
   position: relative;
   z-index: 999999999;
   display: none;
 }
 
-.venue-content {
+.tab-venue-content {
   width: 100%;
   margin: 0 auto;
   overflow: scroll;
 }
 
 
-.venue-items-container {
+.tab-venue-items-container {
   width: 960px;
   margin: 0px auto;
   min-height: 540px;
@@ -22,20 +22,20 @@
 }
 /*menu bar for venue information*/
 
-.venue-menu-container {
+.tab-venue-menu-container {
   width: 100%;
   height: 60px;
   background: rgba(1, 196, 15,1.0);
 }
 
-.venue-menu {
+.tab-venue-menu {
   width: 960px;
   margin: 0 auto;
   padding: 0;
   position: relative;
 }
 
-.venue-menu h3 {
+.tab-venue-menu h3 {
   margin-left: -8px;
   display: inline;
   line-height: 60px;
@@ -43,7 +43,7 @@
   font-weight: 800;
 }
 
-.venue-menu ul {
+.tab-venue-menu ul {
   float: right;
   margin: 0;
   padding: 0;
@@ -51,7 +51,7 @@
   height: 100%;
 }
 
-.venue-menu ul li {
+.tab-venue-menu ul li {
   float: left;
   line-height: 60px;
   padding: 0 10px 0 10px;
@@ -60,10 +60,10 @@
   border-right: 1px dotted black;
 }
 
-.venue-menu ul li:nth-child(1) {
+.tab-venue-menu ul li:nth-child(1) {
   border-left: 1px dotted black;
 }
 
-.venue-menu ul li:hover {
+.tab-venue-menu ul li:hover {
   background: rgba(250,250,250,1);
 }

@@ -1,20 +1,19 @@
-<div class="fixed-top-add-tab">
-  <div class="venue-menu-container">
+<div class="tab-fixed-top-add">
+  <div class="tab-venue-menu-container">
 
-    <div class="venue-menu">
+    <div class="tab-venue-menu">
       <h3><%= @venue.name.upcase %></h3>
       <ul>
-        <li><a href="#">Details</a></li>
-        <li><a href="#">Weather</a></li>
-        <li><a href="#">Tags</a></li>
+        <li><a href="#">Confirm</a></li>
+        <li><a href="#", class='back-home'>Back</a></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="venue-tab">
+  <div class="tab-venue-tab">
 
-    <div class="details">
+    <div class="tab-details">
 
       <div>
         <img src="<%= @venue.img_url %>" />
@@ -33,12 +32,12 @@
 
     </div>
 
-    <div class="weather">
+<!--     <div class="weather">
       <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
 
     </div>
-
-    <div class="tags">
+ -->
+<!--     <div class="tags">
 
 
       <div>
@@ -50,5 +49,6 @@
       </div>
 
     </div>
-
-  </div></div>
+ -->
+  </div>
+</div>

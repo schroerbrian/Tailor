@@ -100,21 +100,6 @@ $('.venue-tab').click(function(event){
 
 //display and remove .add div (user clothing tagging)
 
-$(".add-tags").click(function(){
-  event.preventDefault();
-  $(".add").fadeIn(1000);
-  %(".fixed-top-add-tab.css")
-});
-
-$('body').click(function(){
-  event.preventDefault();
-  $('.add').fadeOut(1000);
-});
-
-$('.add-tags').click(function(event){
-    event.stopPropagation();
-});
-
 
 </script>
 
@@ -122,8 +107,21 @@ $('.add-tags').click(function(event){
 //change header when .add div is displayed
 
 $(document).ready(function(){
-    console.log("hi"); 
+  $(".add-tags").click(function(event){
+    event.preventDefault();
+    $(".add").fadeIn(1000);
+    $(".fixed-top").css("display", "none");
+    $(".tab-fixed-top-add").css("display", "block");
+    event.stopPropagation();     
   });
+
+  $('back-home').click(function(event){
+    event.preventDefault();
+    $('.add').fadeOut(1000);
+  });
+
+});
+
 
 
 </script>
