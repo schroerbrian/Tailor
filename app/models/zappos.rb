@@ -34,7 +34,7 @@ class Zappos
     else
       filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
     end
-    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=10&key=' + "#{ENV['ZAPPOS_KEY']}"
+    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=12&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)
   end
