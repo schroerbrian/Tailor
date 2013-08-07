@@ -5,14 +5,12 @@ Taylor::Application.routes.draw do
   post 'search' => 'venues#search'
   match '/venues' => 'venues#index'
   resources :categories
+  resource :items
 
-
+  match '/items/index' => 'items#index'
+  post '/items/create' => 'items#create'
 
   resources :tags
-
-  resources :items
-
-
 
   resources :venues
 

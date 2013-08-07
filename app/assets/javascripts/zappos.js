@@ -1,5 +1,5 @@
 $(document).ready(function(){
-var container  = $('.selectItem');
+var container  = $('.add');
 
 alert('ok');
   $.ajax({
