@@ -14,8 +14,8 @@ class Zappos
      request = hot_items(options)
      results = request['results']
    end
-   @info << results.map { |r|
-                    { :item => {
+   results.each { |r|
+                  @info <<  { :item => {
                     :name => r['productName'],
                     :brand => r['brandName'],
                     :price => r['price'],

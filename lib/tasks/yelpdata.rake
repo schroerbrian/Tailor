@@ -15,7 +15,7 @@ namespace :yelpdata do
            :term => "#{t.name} bar",
            :city => 'San Francisco',
            :neighborhood => n.name,
-           :limit => 20,
+           :limit => 1,
            :consumer_key => ENV['YELP_CONSUMER_KEY'],
            :consumer_secret => ENV['YELP_CONSUMER_SECRET'],
            :token => ENV['YELP_TOKEN'],
@@ -24,7 +24,7 @@ namespace :yelpdata do
            response = c.search(request)
 
            businesses = response['businesses']
-
+           puts(businesses)
 
            businesses.each { |biz|
               v = Venue.find_by_name(biz['name'])
@@ -41,7 +41,9 @@ namespace :yelpdata do
                 :YID => biz['id'],
                 :snippet_text => biz['snippet_text'],
                 :mobile_url => biz['mobile_url'],
-                :neighborhood_name => n.name)
+                :neighborhood_name => n.name,
+                :closed => biz['is_closed'],
+                :rating => biz['rating'])
                 venue.save!
                 venue.tags << t
                 venue.neighborhood = n
