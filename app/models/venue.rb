@@ -8,6 +8,6 @@ class Venue < ActiveRecord::Base
   belongs_to :neighborhood
 
   validates_presence_of :name
-  validates_presence_of :address_1
+
 
 end
