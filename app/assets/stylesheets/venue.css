@@ -1,53 +1,191 @@
-.venue-hero-container {
-  width: 960px;
+.fixed-top {
+  width: 100%;
+  position: relative;
+  z-index: 999999999;
+}
+
+.venue-content {
+  width: 100%;
   margin: 0 auto;
-  padding: 0;
-  height: 240px;
-}
-
-.venue-background {
-  width: 70%;
-  height: 100%;
-  float: left;
-  background-image: url(http://media-cdn.tripadvisor.com/media/photo-s/03/98/d2/0d/international-house-cafe.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-/*
-  filter: blur(40px);
-  -webkit-filter: blur(40px);
-  -moz-filter: blur(40px);
-  -o-filter: blur(40px);
-  -ms-filter: blur(40px);*/
-}
-
-.weather-background {
-  width: 30%;
-  height: 100%;
-/*  -webkit-transform: skew(-20deg);
-  -moz-transform: skew(-20deg);
-  -o-transform: skew(-20deg);
-  -ms-transform: skew(-20deg);*/
-  background: red;
-  float: left;
-}
-
-.icon-sun::after {
-content: "\f113";
-color: rgb(255, 165, 0);
+  overflow: scroll;
 }
 
 
 .venue-items-container {
   width: 960px;
-  margin: 0 auto;
-  min-height: 600px;
-  border: 1px solid black;
-  overflow: hidden;
+  margin: 0px auto;
+  min-height: 540px;
+  position: relative;
+  padding: 20px 0 20px 0;
+  height: 1024px;
 }
 
-.clothes, .shoes, .accessories {
+
+/*menu bar for venue information*/
+
+.venue-menu-container {
   width: 100%;
-  height: 320px;
-  border: 1px solid black;
+  height: 60px;
+  background: rgba(241, 196, 15,1.0);
 }
 
+.venue-menu {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.venue-menu h3 {
+  margin-left: -8px;
+  display: inline;
+  line-height: 60px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.venue-menu ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.venue-menu ul li {
+  float: left;
+  line-height: 60px;
+  padding: 0 10px 0 10px;
+  width: 60px;
+  text-align: center;
+  border-right: 1px dotted black;
+}
+
+.venue-menu ul li:nth-child(1) {
+  border-left: 1px dotted black;
+}
+
+.venue-menu ul li:hover {
+  background: rgba(250,250,250,1);
+}
+
+/*container for each of the tab items*/
+
+.venue-tab {
+  width: 960px;
+  height: 240px;
+  margin: 0 auto;
+  padding: 0;
+  border-bottom: 5px solid black;
+  position: relative;
+  background-color: rgba(250,250,250,0.95);
+  display: none;
+}
+
+.venue-tab:before {
+  content:"";
+  display:block;
+  position:absolute;
+  top:97%;
+  left:0;
+  right:0;
+  bottom:0;
+  border-top: 5px solid black;
+  background: rgba(255,255,255,1);
+  z-index: 999999999;
+}
+
+.venue-tab .details,
+.venue-tab .weather,
+.venue-tab .tags {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*details*/
+
+.venue-tab .details {
+  display: none;
+}
+
+.details div:nth-child(1) {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+.details div:nth-child(1) img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 35px auto;
+  display: block;
+  border: 2px solid white;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
+
+.details div:nth-child(2) {
+  width: 45%;
+  float: left;
+  margin-top: 40px;
+}
+
+.details div:nth-child(2) ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.details div:nth-child(2) ul li {
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+
+.details div:nth-child(3) {
+  width: 30%;
+  margin-top: 40px;
+  float: left;
+}
+
+.details div:nth-child(3) p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/*weather info*/
+
+.venue-tab .weather {
+  display: none;
+}
+
+/*tags*/
+
+.venue-tab .tags {
+  display: none;
+}
+
+.tags div {
+  float: left;
+  margin: 5%;
+}
+
+.tags div ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.tags div ul li{
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  display: inline;
+}

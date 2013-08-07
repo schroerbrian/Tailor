@@ -15,6 +15,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'guard-rspec'
+  gem "rails-erd"
+  gem 'capybara'
 end
 
 group :production do

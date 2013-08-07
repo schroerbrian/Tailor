@@ -1,14 +1,10 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-@font-face {
-  font-family: "iconvault";
-  src: url("assets/iconvault_forecastfont.eot");
-  src: url("assets/iconvault_forecastfont.eot?#iefix") format("embedded-opentype"),
-       url("assets/iconvault_forecastfont.woff") format("woff"),
-       url("assets/iconvault_forecastfont.ttf") format("truetype"),
-       url("assets/iconvault_forecastfont.svg#iconvault") format("svg");
-  font-weight: normal;
-  font-style: normal;
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  color: black;
+  font-size: 36px;
 }
 
 html,
@@ -18,21 +14,15 @@ body {
   height: 100%;
 }
 
-body {
-  background: white;
-  color: rgba(60,60,60,1);
-  padding: 0;
-  margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  position: relative;
-  cursor: default;
+h1, h2, h3, h5 {
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(40,40,40,1);
 }
 
 p {
+  font-family: 'Lato', sans-serif;
   display: inline;
+  color: rgba(80,80,80,1);
 }
 
 a {
@@ -44,17 +34,13 @@ a:link, a:visited {
   text-decoration:none;
 }
 
-/* entypo */
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-  color: black;
-  font-size: 24px;
-}
+
+/*menubar*/
 
 .menubar-container {
-  background: rgba(52, 73, 94,1.0);
+  background: black;
   height: 50px;
-/*  display: none;*/
+  display: none;
   width: 100%;
 }
 
@@ -67,43 +53,89 @@ a:link, a:visited {
   float: right;
 }
 
+.menubar-container .menubar .nav-text ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.menubar-container .menubar .nav-text ul li {
+  float: left;
+  line-height: 50px;
+  padding: 0 10px 0 10px;
+  width: 60px;
+  text-align: center;
+  border-right: 1px dotted grey;
+  color: white;
+}
+
+.menubar-container .menubar .nav-text ul li:nth-child(1) {
+  border-left: 1px dotted grey;
+}
+
+.menubar-container .menubar .nav-text ul li:hover {
+  background: white;
+}
+
+/*header*/
 .header-container {
-  border: 1px solid black;
   width: 100%;
-  height: 100px;
+  height: 118px;
+  background: rgba(245,245,245,0);
+  border-bottom: 2px solid black;
 }
 
 .header-container .header {
   width: 960px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .header-container .logo {
   width: 960px;
   display: block;
-  background: transparent;
   text-align: center;
-  margin-top: 20px;
+  padding-top: 30px;
 }
 
-.header-container .logo div {
-  background-color: gold;
-  width: 140px;
-  height: 50px;
-  line-height: 50px;
+.header-container .logo h1 {
   margin: 0 auto;
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.header-container .nav-buttons {
+.nav-buttons {
   width: 70px;
-  height: 50px;
+  display: block;
   position: absolute;
-  right: 0;
+  top: 50px;
+  right: 20%;
+  z-index: 99999999;
+
 }
 
 .footer {
-  border: 1px solid black;
   width: 100%;
-  height: 30px;
+  height: 50px;
   text-align: center;
+  background: rgba(40,40,40,1);
+}
+
+#top-link {
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+}
+
+
+.footer p {
+  color: white;
+  line-height: 50px;
 }

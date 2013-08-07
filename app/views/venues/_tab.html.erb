@@ -1,0 +1,40 @@
+<div class="venue-tab">
+
+  <div class="details">
+
+    <div>
+      <img src="<%= @venue.img_url %>" />
+    </div>
+
+    <div>
+      <ul>
+        <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
+        <li><p><%= @venue.neighborhood_name %></p></li>
+        <li><p><%= @venue.rating.inspect %></p></li>
+    </div>
+
+    <div>
+      <p>/ <%=@venue.snippet_text %> /</p>
+    </div>
+
+  </div>
+
+  <div class="weather">
+    <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
+
+  </div>
+
+  <div class="tags">
+
+
+    <div>
+      <ul>
+        <% @venue.tags.each do |tag| %>
+        <li>#<%= tag['name'] %>   </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
