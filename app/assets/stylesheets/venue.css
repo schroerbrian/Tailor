@@ -1,10 +1,36 @@
+body {
+  background-color: #ffffff
+}
+
+.fixed-top {
+  width: 100%;
+  position: relative;
+  z-index: 999999999;
+}
+
+.venue-content {
+  width: 100%;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+
+.venue-items-container {
+  width: 960px;
+  margin: 0px auto;
+  min-height: 540px;
+  position: relative;
+  padding: 20px 0 20px 0;
+  height: 1024px;
+}
+
+
 /*menu bar for venue information*/
 
 .venue-menu-container {
   width: 100%;
   height: 60px;
   background: rgba(241, 196, 15,1.0);
-  position: relative;
 }
 
 .venue-menu {
@@ -15,7 +41,7 @@
 }
 
 .venue-menu h3 {
-  left: 0;
+  margin-left: -8px;
   display: inline;
   line-height: 60px;
   font-size: 28px;
@@ -56,7 +82,7 @@
   padding: 0;
   border-bottom: 5px solid black;
   position: relative;
-  background-color: rgba(250,250,250,1);
+  background-color: rgba(250,250,250,0.95);
   display: none;
 }
 
@@ -167,88 +193,3 @@
   padding: 5px;
   display: inline;
 }
-
-/*container for list of items*/
-
-.venue-items-container {
-  width: 960px;
-  margin: 20px auto;
-  min-height: 540px;
-  position: relative;
-}
-
-.clothes, .shoes, .accessories {
-  width: 100%;
-  border-bottom: 5px solid black;
-  overflow: hidden;
-}
-
-
-/*items and items container*/
-
-.items-container {
-  width: 95%;
-  float: left;
-}
-
-.items-container .items-block {
-  width: 33%;
-  float: left;
-  height: 400px;
-  margin: 10px 0 25px 0;
-}
-
-.items {
-  width: 90%;
-  height: 100%;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.items img {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-}
-
-.items .likes {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  background: rgba(0,0,0,0.8);
-}
-
-.items .likes button {
-  display: block;
-  height: 30px;
-  margin: 0 auto;
-  width: 60px;
-  background-color: transparent;
-  border: none;
-  color: white;
-}
-
-
-/*more clickables*/
-
-.more {
-  float: right;
-  width: 5%;
-}
-
-.more [class*="entypo-"]:before {
-  font-size: 50px;
-  display: block;
-  margin-top: 80px;
-}
-
-.more a {
-  font-size: 50px;
-  color: black;
-}
-
-

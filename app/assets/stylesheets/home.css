@@ -60,9 +60,13 @@
 
 .heroes-container-1,
 .heroes-container-2,
-.heroes-container-3, 
+.heroes-container-3,
 .heroes-container-4 {
   background: white;
 }
 
+#ui-id-1 {
+  height: 120px;
+  overflow: scroll;
+}
 
