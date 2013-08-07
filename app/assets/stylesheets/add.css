@@ -1,6 +1,6 @@
 .add {
   width: 100%;
-  display: block;
+  display: none;
   background: rgba(220,220,220,1);
   position: absolute;
   z-index: 99999999;
