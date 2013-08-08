@@ -19,6 +19,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem "rails-erd"
   gem 'capybara'
+  gem 'twitter-bootstrap-rails'
 end
 
 group :production do
