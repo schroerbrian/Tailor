@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
   end
 
-  dßef contact
+  def contact
 
   end
 

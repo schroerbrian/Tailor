@@ -9,4 +9,3 @@ class TeamMailer < ActionMailer::Base
     mail(to: "tailorapp@yahoo.com", subject: "New Comment")
   end
 end
-ßß
