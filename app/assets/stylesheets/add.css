@@ -46,13 +46,6 @@
   text-transform: uppercase;
 }
 
-.alternate-venue-menu h4 {
-  display: inline;
-  line-height: 60px;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-
 .alternate-venue-menu ul {
   float: right;
   margin: 0;
