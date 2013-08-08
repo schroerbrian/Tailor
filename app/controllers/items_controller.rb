@@ -1,64 +1,56 @@
 class ItemsController < ApplicationController
-  # GET /items
-  # GET /items.json
 
+  layout false
 
   def index
-  @items = Item.all
 
-   render :json => {:success => true, :html => :index_html}
+    @items = Item.all
+    @item = Item.new
+
+    @params = params
+
+    @tag = params[:tag]
+    @category=params[:category]
+    @gender = params[:gender]
+
+    z = Zapposclient.new({:category => @category, :gender => @gender})
+    z.zappos_data
+    @zappos_results = z.info
+
   end
 
   def new
     @item = Item.new
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
-
 
   def create
+
+    category = Category.find_by_name(params[:item][:category].humanize)
+    params[:item].delete(:category)
+
+    binding.pry
+    tag_array = []
+    params[:item][:tag].each do |t|
+      tag_array << Tag.find(t)
+    end
+
+    params[:item].delete(:tag)
+
     @item = Item.new(params[:item])
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render json: @item, status: :created, location: @item }
-        format.js
-      else
-        format.html { render action: "new" }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+    if @item.save
+      @item.categories << category
+      tag_array.each do |t|
+        @item.tags << t
       end
+      render :text => "saved"
+    else
+      render :text => "not saved"
     end
+
   end
 
-  # PUT /items/1
-  # PUT /items/1.json
-  def update
-    @item = Item.find(params[:id])
-
-    respond_to do |format|
-      if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /items/1
-  # DELETE /items/1.json
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-
-    respond_to do |format|
-      format.html { redirect_to items_url }
-      format.json { head :no_content }
-    end
-  end
 end
+
+    # tag = Tag.find_by_name(params[:item][:tag].downcase)

@@ -37,7 +37,7 @@
     <div class="more">
 
       <a href="#"><span class="entypo-right-open-big"></span></a></br>
-      <a href="#", class='add-tags'>+</a>
+      <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @clothing_category, :tag => @venue.tags ) %></div>
 
     </div>
 

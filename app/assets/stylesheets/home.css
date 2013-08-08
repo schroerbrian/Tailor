@@ -31,22 +31,11 @@
   width: 400px;
 }
 
-.search-bar span {
-  width: 30px;
-  height: 30px;
-  margin-left: 2px;
-  padding: 0;
-  border: 2px solid rgba(127, 140, 141,0.5);
-  display: block;
-  float: left;
-  color: grey;
-}
-
 #venue {
   background: transparent;
   border: 2px solid rgba(127, 140, 141,0.5);
   color: rgba(127, 140, 141,1.0);
-  width: 320px;
+  width: 260px;
   height: 26px;
   margin: 0;
   padding: 2px;
@@ -76,6 +65,42 @@
   background: rgba(240,240,240,0.9);
   border: none;
   font-size: 14px;
+}
+
+/*
+.search-bar span {
+  width: 60px;
+  height: 30px;
+  margin-left: 2px;
+  padding: 0;
+  border: 2px solid rgba(127, 140, 141,0.5);
+  display: block;
+  float: left;
+  color: grey;
+  text-align: center;
+  line-height: 30px;
+}*/
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  width: 60px;
+  height: 30px;
+  margin-left: 2px;
+  padding: 0;
+  border: 2px solid rgba(127, 140, 141,0.5);
+  display: block;
+  float: left;
+  color: grey;
+  text-align: center;
+  line-height: 30px;
+}
+
+input[type="radio"]:checked + label{
+  background: rgba(127, 140, 141,1.0);;
+  color: white;
 }
 
 input[type="submit"] {

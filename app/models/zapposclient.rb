@@ -1,55 +1,53 @@
 require 'open-uri'
 require 'json/pure'
 require 'pstore'
-class Zappos
+class Zapposclient
   attr_accessor :info, :results, :gender, :category
 
-  def zap(gender, category, info=[])
-   @info = info
-   options = {:gender => gender, :category => category}
+  def initialize(options={}, info=[])
+    @gender = options[:gender]
+    @category = options[:category]
+    @info = :info
+  end
+
+  def zappos_data
+   options = {:gender => self.gender, :category => self.category}
    request = hot_items(options)
    results = request['results']
    if results.empty?
-     options = {:gender => "n", :category => category}
+     options = {:category => category}
      request = hot_items(options)
      results = request['results']
    end
-   results.each { |r|
-                  @info <<  { :item => {
+   @info = results.map { |r|
+                    { :item => {
                     :name => r['productName'],
                     :brand => r['brandName'],
                     :price => r['price'],
                     :item_url => r['defaultProductUrl'],
-                    :img_url => image(r['productId']),
+                    :img_url => image(r['styleId']),
                     :gender => gender }
                   }
     }
   end
 
   def hot_items(options={})
-    gender = options[:gender]
+    gender = options[:gender] if options.key?(:gender)
     category = options[:category]
-    if gender != 'n'
+    if gender
       filter = '&filters={"gender":'+'"'+"#{gender}" +'"'+  ',"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
     else
       filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
     end
-
-    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=12&key=' + "#{ENV['ZAPPOS_KEY']}"
-
+    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)
   end
 
   def image(id)
-    begin
-    url = "http://api.zappos.com/Product/"+"#{id}"+'?includes=["styles"]&key='+"#{ENV['ZAPPOS_KEY']}"
-    updated_url = URI.encode(url)
-    request = JSON.parse(open(updated_url.strip).read)
-    img_url = request['product'][0]['defaultImageUrl']
-    rescue OpenURI::HTTPError => ex
-      return ""
-    end
+    slash_id = id.split(//).shift(id.length-1)
+    slashed_string = slash_id.inject("") { |n,l| n + l + '/'}
+    url = "http://www.zappos.com/images/z/" + "#{slashed_string}" + "#{id}" + "-p-DETAILED.jpg"
   end
 
 
