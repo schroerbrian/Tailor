@@ -8,8 +8,8 @@ development:
   encoding: unicode
   database: tailor
   host: localhost
+  port: 5432
   pool: 5
-  username: liorlight
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -20,8 +20,8 @@ test:
   encoding: unicode
   database: tailor
   host: localhost
+  port: 5432
   pool: 5
-  username: liorlight
   password:
 
 production:
@@ -30,5 +30,4 @@ production:
   database: tailor
   host: localhost
   pool: 5
-  username: liorlight
   password:

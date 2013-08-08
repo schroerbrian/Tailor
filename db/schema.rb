@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20130807161327) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
+    t.text     "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130807161327) do
   create_table "items", :force => true do |t|
     t.string   "name"
     t.string   "brand"
-    t.float    "price"
+    t.string   "price"
     t.string   "item_url"
     t.string   "img_url"
     t.integer  "rating"

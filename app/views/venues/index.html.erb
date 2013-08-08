@@ -31,7 +31,6 @@
 <div class="venue-content">
   <section class="venue-items-container">
     <%= render 'show' %>
-
     <div class="add">
       <img src="assets/loading.gif" class="loading" />
     </div>
@@ -111,9 +110,7 @@ $('.venue-tab').click(function(event){
 
 <script>
 // display add modal
-// PREVIOUS JQ
-// change header when .add div is displayed
-// display and remove .add div (user clothing tagging)
+// change alternate header when .add div is displayed
 $(document).ready(function(){
   $(".add-tags").click(function(event){
     event.preventDefault();

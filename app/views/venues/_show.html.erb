@@ -2,9 +2,14 @@
 
   <div class="clothes">
     <h2>What to wear at <%= @venue.name.titleize %> </h2>
-
     <div class="items-container">
 
+      <div class='tagged_items'>
+        <% @venue.tags.each do |tag|  %>
+    <p> <%= tag['name']      %> </p>
+        <%  end                       %>
+      </div>
+     
       <div class="items-block">
         <div class="items">
           <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/d42652d7-2472-401c-85f7-f7c792dee96d.jpg" /></a>
@@ -26,7 +31,6 @@
       <div class="items-block">
         <div class="items">
           <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/65ca1960-82e2-4fb7-ad06-5200b499da7a.jpg" /></a>
-
           <div class="likes">
             <button>Like</button>
           </div>
@@ -42,7 +46,6 @@
     </div>
 
   </div>
-
 
   <div class="shoes">
     <h3>That goes with those shoes</h3>
