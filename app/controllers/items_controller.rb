@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   layout false
 
   def index
-
+    sleep 3
     @items = Item.all
     @item = Item.new
 
@@ -27,22 +27,17 @@ class ItemsController < ApplicationController
   def create
 
     category = Category.find_by_name(params[:item][:category].humanize)
+    tags = params[:item][:tag].scan(/(\d+)/)
     params[:item].delete(:category)
-
-    binding.pry
-    tag_array = []
-    params[:item][:tag].each do |t|
-      tag_array << Tag.find(t)
-    end
-
     params[:item].delete(:tag)
 
     @item = Item.new(params[:item])
 
     if @item.save
       @item.categories << category
-      tag_array.each do |t|
-        @item.tags << t
+      tags.each do |t|
+        tag_object = Tag.find(t[0].to_i)
+        @item.tags << tag_object
       end
       render :text => "saved"
     else
