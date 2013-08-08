@@ -6,6 +6,11 @@ class VenuesController < ApplicationController
 
   def search
 
+    venue_tag_ids = Venue.last.tags.map { |t| t.id }
+      @item_search = []
+      Item.all.each { |item| item_tag_ids = item.tags.map { |i| i.id }
+        @item_search << item if ((venue_tag_ids & item_tag_ids).count > 0) }
+
     @title = params[:venue]
     @gender = params[:gender]
     @clothing_category = ['Tops','Bottoms', 'Jackets and Coats', 
@@ -15,7 +20,7 @@ class VenuesController < ApplicationController
 
     @weather = wunderweather
     @venue = Venue.find_by_name(@title)
-    
+
     if @venue 
       render 'index'
     else
@@ -23,5 +28,7 @@ class VenuesController < ApplicationController
     end
 
   end
+
+
 
 end
