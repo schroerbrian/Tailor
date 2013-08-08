@@ -5,10 +5,10 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'foreman'
 gem 'yelpster'
 gem 'json'
+gem 'pg'
 
 group :development, :test do
   gem 'pry'
@@ -22,7 +22,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+
 end
 
 # Gems used only for assets and not required
