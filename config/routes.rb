@@ -2,7 +2,13 @@ Taylor::Application.routes.draw do
 
   root :to => 'home#index'
   get '/team' => 'home#team'
+
   get 'search' => 'venues#search', :as => 'search_venues'
+
+
+  get '/contact' => 'home#contact'
+  post '/contact/submit' => 'home#send_contact_email'
+
   match '/venues' => 'venues#index'
   resources :categories
   resource :items
