@@ -15,7 +15,6 @@
   <%= render 'tab' %>
 </div>
 
-
 <div class="venue-content">
   <section class="venue-items-container">
     <%= render 'show' %>
@@ -23,10 +22,6 @@
   </section>
 </div>
 
-
-
-
-<script src='zappos.js'></script>
 
 <script>
 
@@ -101,21 +96,41 @@ $('.venue-tab').click(function(event){
 
 <script>
 
+$('.add-tags').click(function(event){
+  event.preventDefault();
+
+  $('.loading').css('display','block');
+
+  var select = $(this).children();
+
+  $.ajax({
+
+    url: select.attr("href"),
+    success: function(data) {
+      $('.add').append(data);
+      $('.add').fadeIn();
+      $('.loading').css('display','none');
+    }
+  })
+
+})
+
+
 //display and remove .add div (user clothing tagging)
 
-$(".add-tags").click(function(){
-  event.preventDefault();
-  $(".add").fadeIn(1000);
-});
+// $(".add-tags").click(function(){
+//   event.preventDefault();
+//   $(".add").fadeIn(1000);
+// });
 
-$('html').click(function(event){
-  event.preventDefault();
-  $('.add').fadeOut(1000);
-});
+// $('html').click(function(event){
+//   event.preventDefault();
+//   $('.add').fadeOut(1000);
+// });
 
-$('.add-tags').click(function(event){
-    event.stopPropagation();
-});
+// $('.add-tags').click(function(event){
+//     event.stopPropagation();
+// });
 </script>
 
 <script>
@@ -124,40 +139,9 @@ $('.add-tags').click(function(event){
 $(document).ready(function(){
 
  if ($('.add').css('display') !== 'none') {
-    console.log("hi"); 
+    console.log("hi");
 }
   });
 
-// $(document).ready(function(){
-//   if ($('div.x').css('height') === 'auto') {
-//     $('.y').removeClass('a');
-//   }   
-
-// });
-
-
-
-  // translucentHeader();
-    // $cache.css({'position': 'fixed', 'top': '0'});
-  //   $('.venue-content').css('margin-top','50px');
-  // } else {
-  //   $cache.css({'position': 'relative', 'top': 'auto'});
-  //   $('.venue-content').css('margin-top','0');
-
-
-
-// $(window).scroll(fixDiv);
-
-// fixDiv();
 
 </script>
-
-
-<!-- some bullshit written by an idiot
-
-$('.more a:nth-child(2)').click(function(event){
-  event.preventDefault();
-  $('.add').fadeIn();
-  console.log('hahaha');
-
-}); -->

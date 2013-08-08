@@ -5,9 +5,12 @@ class VenuesController < ApplicationController
   end
 
   def search
-    @param = params
+
     @title = params[:venue]
     @gender = params[:gender]
+    @clothing_category = ['Tops','Bottoms', 'Jackets and Coats', 'Suits', 'Dresses', 'Jumpsuits and Rompers'].sample #need to add more, also with logic that contains gender
+    @shoes_category = []
+    @accessories_category = []
 
     @weather = wunderweather
 
