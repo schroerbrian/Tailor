@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-'ruby 1.9.3'
+ruby '1.9.3'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -9,6 +9,7 @@ gem 'foreman'
 gem 'yelpster'
 gem 'json'
 gem 'pg'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'pry'
@@ -19,7 +20,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem "rails-erd"
   gem 'capybara'
-  gem 'twitter-bootstrap-rails'
 end
 
 group :production do
