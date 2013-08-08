@@ -26,7 +26,7 @@
 .tab-venue-menu-container {
   width: 100%;
   height: 60px;
-  background: rgba(51, 51, 51, 1.0);
+  background: rgba(8, 8, 8, 0.9);
 }
 
 .tab-venue-menu {
@@ -40,9 +40,10 @@
   margin-left: -8px;
   display: inline;
   line-height: 60px;
-  font-size: 28px;
-  font-weight: 800;
-  color: rgba(127, 127, 127, 1);
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(170, 170, 170, 1);
+  text-transform: uppercase;
 }
 
 .tab-venue-menu h4 {
@@ -62,12 +63,17 @@
 
 .tab-venue-menu ul li {
   float: left;
-  line-height: 60px;
-  padding: 0 10px 0 10px;
+  line-height: 52px;
+  padding: 0px 10px 0 10px;
   width: 60px;
   text-align: center;
   border-right: 1px dotted black;
 
+}
+
+.tab-venue-menu .entypo-check, 
+.tab-venue-menu .entypo-cancel {
+  padding-top: 1px;
 }
 
 #back-home {

@@ -1,7 +1,7 @@
 .add {
   width: 100.88%;
   display: none;
-  background: rgba(220,220,220,1);
+  background: rgba(255,255,255,1);
   position: absolute;
   z-index: 99999999;
   top: 0;
@@ -17,7 +17,7 @@
 }
 
 .add h2, .add h3 {
-  color: rgba(61, 61, 61, 1);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 /*items container for 12 pieces*/
@@ -49,7 +49,7 @@
   bottom: 0;
   width: 100%;
   height: 30px;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.7);
 }
 
 .select-item .select:hover {
@@ -57,7 +57,7 @@
   bottom: 0;
   width: 100%;
   height: 30px;
-  background-color: rgba(241, 196, 15,1.0);
+  background-color: rgba(241, 196, 15, 0.8);
 }
 
 .select-item .select button {
@@ -70,12 +70,4 @@
   color: white;
 }
 
-.select-item .select button:hover {
-  display: block;
-  height: 30px;
-  margin: 0 auto;
-  width: 60px;
-  background-color: rgba(241, 196, 15,1.0);
-  border: none;
-  color: white;
-}
+
