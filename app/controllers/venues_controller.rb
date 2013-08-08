@@ -8,7 +8,7 @@ class VenuesController < ApplicationController
 
     @title = params[:venue]
     @gender = params[:gender]
-    @clothing_category = ['Tops','Bottoms', 'Jackets and Coats', 'Suits', 'Dresses', 'Jumpsuits and Rompers'].sample #need to add more, also with logic that contains gender
+    @clothing_category = ['Tops','Bottoms', 'Jackets and Coats', 'Suits', 'Dresses'].sample #need to add more, also with logic that contains gender
     @shoes_category = []
     @accessories_category = []
 

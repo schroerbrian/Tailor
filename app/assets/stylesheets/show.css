@@ -1,12 +1,10 @@
 /*container for list of items*/
 
-
 .clothes, .shoes, .accessories {
   width: 100%;
   border-bottom: 5px solid black;
   overflow: hidden;
 }
-
 
 /*items and items container*/
 

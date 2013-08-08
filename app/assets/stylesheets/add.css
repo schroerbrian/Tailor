@@ -20,23 +20,6 @@
   opacity: 0.9;
   display: none;
 }
-/*
-.tab-venue-content {
-  width: 100%;
-  margin: 0 auto;
-  overflow: scroll;
-}
-*/
-
-/*
-.tab-venue-items-container {
-  width: 960px;
-  margin: 0px auto;
-  min-height: 540px;
-  position: relative;
-  padding: 20px 0 20px 0;
-  height: 1024px;
-}*/
 
 /*menu bar for venue information*/
 
@@ -61,13 +44,6 @@
   font-weight: 400;
   color: rgba(170, 170, 170, 1);
   text-transform: uppercase;
-}
-
-.alternate-venue-menu h4 {
-  display: inline;
-  line-height: 60px;
-  text-transform: uppercase;
-  vertical-align: middle;
 }
 
 .alternate-venue-menu ul {
@@ -191,5 +167,3 @@
   text-align: center;
   margin-top: 30px;
 }
-
-

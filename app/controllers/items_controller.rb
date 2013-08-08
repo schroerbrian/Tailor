@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   layout false
 
   def index
-    sleep 3
+    sleep 1
     @items = Item.all
     @item = Item.new
 

@@ -19,7 +19,7 @@
 <div class="alternate-fixed-top">
   <div class="alternate-venue-menu-container">
     <div class="alternate-venue-menu">
-      <h3>What would you would wear to <%= @venue.name.titleize %>?</h3>
+      <h3>What to wear at <%= @venue.name.titleize %>?</h3>
       <ul>
         <li><a href="#" id='confirm'><span class="entypo-check"></span></a></li>
         <li><a href="#", id='back-home'><span class="entypo-cancel"></span></a></li>
@@ -37,7 +37,6 @@
     </div>
   </section>
 </div>
-
 
 <script>
 // fixed header on scroll
@@ -144,15 +143,37 @@ $(document).ready(function(){
   });
 
   $('#back-home').click(function(){
-    event.preventDefault();
-    $('.add').fadeOut(500);
-    $(".alternate-fixed-top").fadeOut(100);
-    $(".fixed-top").fadeIn(500);
-    $("html, body").animate({ scrollTop: 0 }, 400);
-      return false;
-
+    close();
   });
+
+  $('#confirm').click(function(){
+    $('.waiting-add').each(function() {
+      var form = $(this).parents('form');
+      $.ajax({
+        url: form.attr("action"),
+        type: form.attr("method"),
+        data: form.serialize(),
+        success: function(data) {
+        }
+      });
+    })
+    alert('saved');
+    close();
+    window.location.reload();
+  })
+
 });
+
+// closing the modal
+function close() {
+  $('.add').slideUp('fast');
+  $('.zappos-items-container').remove();
+  $(".alternate-fixed-top").slideUp('fast', function(){
+    $(".fixed-top").slideDown('fast');
+  });
+  $("html, body").animate({ scrollTop: 0 }, 400);
+    return false;
+}
 
 </script>
 
