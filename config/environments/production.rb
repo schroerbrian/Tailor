@@ -66,7 +66,7 @@ Taylor::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf .jpg .png)
+  config.assets.precompile += %w( .svg .eot .woff .ttf .jpg .png .css)
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
