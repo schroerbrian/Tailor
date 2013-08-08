@@ -1,7 +1,8 @@
-.tab-fixed-top-add {
+.tab-fixed-top {
   width: 100%;
   position: relative;
   z-index: 999999999;
+  opacity: 0.9;
   display: none;
 }
 
@@ -25,7 +26,7 @@
 .tab-venue-menu-container {
   width: 100%;
   height: 60px;
-  background: rgba(1, 196, 15,1.0);
+  background: rgba(51, 51, 51, 1.0);
 }
 
 .tab-venue-menu {
@@ -41,6 +42,14 @@
   line-height: 60px;
   font-size: 28px;
   font-weight: 800;
+  color: rgba(127, 127, 127, 1);
+}
+
+.tab-venue-menu h4 {
+  display: inline;
+  line-height: 60px;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .tab-venue-menu ul {
@@ -58,6 +67,15 @@
   width: 60px;
   text-align: center;
   border-right: 1px dotted black;
+
+}
+
+#back-home {
+  color: rgba(127, 127, 127, 1);
+}
+
+#confirm {
+  color: rgba(127, 127, 127, 1);
 }
 
 .tab-venue-menu ul li:nth-child(1) {
@@ -65,5 +83,5 @@
 }
 
 .tab-venue-menu ul li:hover {
-  background: rgba(250,250,250,1);
+  background: rgba(241, 196, 15,1.0);
 }

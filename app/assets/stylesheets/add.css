@@ -52,6 +52,14 @@
   background: rgba(0,0,0,0.8);
 }
 
+.select-item .select:hover {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(241, 196, 15,1.0);
+}
+
 .select-item .select button {
   display: block;
   height: 30px;
@@ -62,3 +70,12 @@
   color: white;
 }
 
+.select-item .select button:hover {
+  display: block;
+  height: 30px;
+  margin: 0 auto;
+  width: 60px;
+  background-color: rgba(241, 196, 15,1.0);
+  border: none;
+  color: white;
+}

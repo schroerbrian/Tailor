@@ -1,54 +1,15 @@
-<div class="tab-fixed-top-add">
+<div class="tab-fixed-top">
   <div class="tab-venue-menu-container">
 
     <div class="tab-venue-menu">
-      <h3><%= @venue.name.upcase %></h3>
+      <h3>What would you would wear to <%= @venue.name.titleize %>?</h3>
       <ul>
-        <li><a href="#">Confirm</a></li>
-        <li><a href="#", class='back-home'>Back</a></li>
+        <li><a href="#" id='confirm'>Confirm</a></li>
+        <li><a href="#", id='back-home'>Back</a></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="tab-venue-tab">
 
-    <div class="tab-details">
-
-      <div>
-        <img src="<%= @venue.img_url %>" />
-      </div>
-
-      <div>
-        <ul>
-          <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
-          <li><p><%= @venue.neighborhood_name %></p></li>
-          <li><p><%= @venue.rating.inspect %></p></li>
-      </div>
-
-      <div>
-        <p>/ <%=@venue.snippet_text %> /</p>
-      </div>
-
-    </div>
-
-<!--     <div class="weather">
-      <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
-
-    </div>
- -->
-<!--     <div class="tags">
-
-
-      <div>
-        <ul>
-          <% @venue.tags.each do |tag| %>
-          <li>#<%= tag['name'] %>   </li>
-          <% end %>
-        </ul>
-      </div>
-
-    </div>
- -->
-  </div>
 </div>
