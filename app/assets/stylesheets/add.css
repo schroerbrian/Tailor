@@ -161,7 +161,7 @@
   color: grey;
 }
 
-.zappos-info input[type="submit"]hover {
+.zappos-info input[type="submit"]:hover {
   background: white;
 }
 
