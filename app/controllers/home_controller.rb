@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
     @venues.each do |venue|
       @venue_names << venue.name
+    end
   end
 
   def team
