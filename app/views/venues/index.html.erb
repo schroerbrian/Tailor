@@ -91,55 +91,9 @@ $('.venue-tab').click(function(event){
 
 </script>
 
-<script>
-//PREVIOUS JQ
-//change header when .add div is displayed
-//display and remove .add div (user clothing tagging)
-// $(document).ready(function(){
-//   $(".add-tags").click(function(event){
-//     event.preventDefault();
-//     $(".fixed-top").slideUp('fast', function() {
-//       setTimeout(500);  
-//       $(".tab-fixed-top").slideDown('fast', function() {
-//         setTimeout(2000);
-//         $(".add").slideDown(800);
-//       });
-//     });
-//   });
- 
-//   $('#back-home').click(function(){
-//     event.preventDefault();
-//     $('.add').fadeOut(500);
-//     $(".tab-fixed-top").fadeOut(100);
-//     $(".fixed-top").fadeIn(500);
-//     $("html, body").animate({ scrollTop: 0 }, 400);
-//       return false;
 
-//   });
-// });
-// </script>
 
-<script>
-//previous JQ
-//fix .add div
-// function fixTabDiv() {
-//     var $tabCache = $('.tab-fixed-top');
-
-//       if ($(window).scrollTop() > 140) {
-//         $tabCache.css({'position': 'fixed', 'top': '0'});
-//         $('.venue-content').css('margin-top','50px');
-//       } else {
-//         $tabCache.css({'position': 'relative', 'top': 'auto'});
-//         $('.venue-content').css('margin-top','0');
-//       }
-
-//   }
-
-// $(window).scroll(fixTabDiv);
-// fixTabDiv();
-
-</script>
-
+    <script >
 
 $('.add-tags').click(function(event){
   event.preventDefault();
@@ -161,21 +115,6 @@ $('.add-tags').click(function(event){
 })
 
 
-//display and remove .add div (user clothing tagging)
-
-// $(".add-tags").click(function(){
-//   event.preventDefault();
-//   $(".add").fadeIn(1000);
-// });
-
-// $('html').click(function(event){
-//   event.preventDefault();
-//   $('.add').fadeOut(1000);
-// });
-
-// $('.add-tags').click(function(event){
-//     event.stopPropagation();
-// });
 </script>
 
 <script>
