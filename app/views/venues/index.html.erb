@@ -144,15 +144,37 @@ $(document).ready(function(){
   });
 
   $('#back-home').click(function(){
-    event.preventDefault();
-    $('.add').fadeOut(500);
-    $(".alternate-fixed-top").fadeOut(100);
-    $(".fixed-top").fadeIn(500);
-    $("html, body").animate({ scrollTop: 0 }, 400);
-      return false;
-
+    close();
   });
+
+  $('#confirm').click(function(){
+    $('.waiting-add').each(function() {
+      var form = $(this).parents('form');
+      $.ajax({
+        url: form.attr("action"),
+        type: form.attr("method"),
+        data: form.serialize(),
+        success: function(data) {
+        }
+      });
+    })
+    alert('saved');
+    close();
+    window.location.reload();
+  })
+
 });
+
+// closing the modal
+function close() {
+  $('.add').slideUp('fast');
+  $('.zappos-items-container').remove();
+  $(".alternate-fixed-top").slideUp('fast', function(){
+    $(".fixed-top").slideDown('fast');
+  });
+  $("html, body").animate({ scrollTop: 0 }, 400);
+    return false;
+}
 
 </script>
 
