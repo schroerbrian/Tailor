@@ -10,29 +10,49 @@
       <ul>
         <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
         <li><p><%= @venue.neighborhood_name %></p></li>
-        <li><p><%= @venue.rating.inspect %></p></li>
+        <li><p><%= @venue.rating.to_i %>/5</p></li>
     </div>
 
     <div>
-      <p>/ <%=@venue.snippet_text %> /</p>
+      <div><p>/ <%=@venue.snippet_text %> /</p></div>
     </div>
 
   </div>
 
   <div class="weather">
-    <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
-
+    <div class="weather-item">
+        <h3><%= @weather['hourly_forecast'][0]['FCTTIME']['hour'] %>:00</h3>
+        <img src="<%= @weather['hourly_forecast'][0]['icon_url'] %>" />
+        <h1><%= @weather['hourly_forecast'][0]['temp']['english'] %>&deg;</h1>
+    </div>
+    <div class="weather-item">
+      <h3><%= @weather['hourly_forecast'][1]['FCTTIME']['hour'] %>:00</h3>
+      <img src="<%= @weather['hourly_forecast'][1]['icon_url'] %>" />
+      <h1><%= @weather['hourly_forecast'][1]['temp']['english'] %>&deg;</h1>
+    </div>
+    <div class="weather-item">
+      <h3><%= @weather['hourly_forecast'][2]['FCTTIME']['hour'] %>:00</h3>
+      <img src="<%= @weather['hourly_forecast'][2]['icon_url'] %>" />
+      <h1><%= @weather['hourly_forecast'][2]['temp']['english'] %>&deg;</h1>
+    </div>
+    <div class="weather-item">
+      <h3><%= @weather['hourly_forecast'][3]['FCTTIME']['hour'] %>:00</h3>
+      <img src="<%= @weather['hourly_forecast'][3]['icon_url'] %>" />
+      <h1><%= @weather['hourly_forecast'][3]['temp']['english'] %>&deg;</h1>
+    </div>
+    <div class="weather-item">
+      <h3><%= @weather['hourly_forecast'][4]['FCTTIME']['hour'] %>:00</h3>
+      <img src="<%= @weather['hourly_forecast'][4]['icon_url'] %>" />
+      <h1><%= @weather['hourly_forecast'][4]['temp']['english'] %>&deg;</h1>
+    </div>
   </div>
 
   <div class="tags">
 
-
     <div>
-      <ul>
         <% @venue.tags.each do |tag| %>
-        <li>#<%= tag['name'] %>   </li>
+        <span>#<%= tag['name'] %></span>
         <% end %>
-      </ul>
     </div>
 
   </div>
