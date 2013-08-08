@@ -23,6 +23,10 @@ namespace :yelpdata do
 
            response = c.search(request)
 
+           if response["error"]
+             raise response["error"]["text"]
+           end
+
            businesses = response['businesses']
            puts(businesses)
 
