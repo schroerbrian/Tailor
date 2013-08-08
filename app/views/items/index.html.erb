@@ -1,25 +1,71 @@
-<%= @zappos_results.inspect %>
-<%= @tag %>
+<%= @params %>
 
-<ul>
-  <% @zappos_results.each do |z| %>
-    <li>
+<% @zappos_results.each do |z| %>
+
+  <div class="zappos-item">
+    <div class="zappos-image">
       <img src="<%= z[:item][:img_url] %>" />
-      <%= z[:item][:name] %>
-      <%= z[:item][:brand] %>
-      <%= z[:item][:price] %>
+    </div>
 
+    <div class="zappos-info">
       <%= form_for(@item) do |f| %>
-        <div class="hidden"><%= f.text_field :name, :value => z[:item][:name] %></div>
-        <div class="hidden"><%= f.text_field :brand, :value => z[:item][:brand]  %></div>
-        <div class="hidden"><%= f.text_field :price, :value => z[:item][:price]  %></div>
-        <div class="hidden"><%= f.text_field :item_url, :value => z[:item][:item_url]  %></div>
-        <div class="hidden"><%= f.text_field :img_url, :value => z[:item][:img_url]  %></div>
-        <div class="hidden"><%= f.text_field :gender, :value => z[:item][:gender]  %></div>
-        <div class="hidden"><%= f.text_field :gender, :value => z[:item][:gender]  %></div>
-        <%= f.submit %>
+        <%= f.hidden_field :name, :value => z[:item][:name] %>
+        <%= f.hidden_field :brand, :value => z[:item][:brand]  %>
+        <%= f.hidden_field :price, :value => z[:item][:price]  %>
+        <%= f.hidden_field :item_url, :value => z[:item][:item_url]  %>
+        <%= f.hidden_field :img_url, :value => z[:item][:img_url]  %>
+        <%= f.hidden_field :gender, :value => z[:item][:gender]  %>
+        <%= f.hidden_field :category, :value => @category %>
+        <%= f.hidden_field :tag, :value => @tag %>
+        <%= f.submit "+" %>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+
+      <div class="zappos-text-info">
+        <div><%= z[:item][:brand] %></div>
+        <div><%= z[:item][:price] %></div>
+      </div>
+
+    </div>
+
+  </div>
+<% end %>
+
+<div><button class="add-all">Add All</button></div>
+
+<script>
+
+  // $(".zappos-image img")
+  // .error(function(){
+  //   $(this).hide();
+  // })
+  // .attr("src", "missing.png");
+
+</script>
+
+<script>
+
+$('input[type="submit"]').click(function(event){
+  event.preventDefault();
+  $(this).addClass( "waiting-add" );
+  $(this).css('background','black');
+})
+
+$('.add-all').click(function(){
+
+  $('.waiting-add').each(function() {
+    var form = $(this).parents('form');
+
+    $.ajax({
+      url: form.attr("action"),
+      type: form.attr("method"),
+      data: form.serialize(),
+      success: function(data) {
+      }
+    })
+  })
+
+})
+
+
+</script>
 

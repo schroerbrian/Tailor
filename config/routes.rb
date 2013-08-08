@@ -6,7 +6,7 @@ Taylor::Application.routes.draw do
   match '/venues' => 'venues#index'
   resources :categories
   resource :items
-
+  # get '/items/tagging' => 'items#tagging', :as => :items_tagging
   match '/items/index' => 'items#index'
   post '/items/create' => 'items#create'
 

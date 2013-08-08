@@ -13,22 +13,34 @@
   </div>
 
   <%= render 'tab' %>
+
 </div>
 
+<div class="alternate-fixed-top">
+  <div class="alternate-venue-menu-container">
+    <div class="alternate-venue-menu">
+      <h3>What would you would wear to <%= @venue.name.titleize %>?</h3>
+      <ul>
+        <li><a href="#" id='confirm'><span class="entypo-check"></span></a></li>
+        <li><a href="#", id='back-home'><span class="entypo-cancel"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="venue-content">
   <section class="venue-items-container">
     <%= render 'show' %>
-    <%= render 'add' %>
+
+    <div class="add">
+      <img src="assets/loading.gif" class="loading" />
+    </div>
   </section>
 </div>
 
 
-
-
-<script src='zappos.js'></script>
-
 <script>
+// fixed header on scroll
 
   function fixDiv() {
     var $cache = $('.fixed-top');
@@ -48,6 +60,7 @@
 </script>
 
 <script>
+// display tab modal
 
 $('.venue-menu ul li:nth-child(1)').click(function(event){
   event.preventDefault();
@@ -100,64 +113,66 @@ $('.venue-tab').click(function(event){
 </script>
 
 <script>
+// display add modal
 
-//display and remove .add div (user clothing tagging)
+// PREVIOUS JQ
+// change header when .add div is displayed
+// display and remove .add div (user clothing tagging)
+$(document).ready(function(){
+  $(".add-tags").click(function(event){
+    event.preventDefault();
 
-$(".add-tags").click(function(){
-  event.preventDefault();
-  $(".add").fadeIn(1000);
+    var select = $(this).children();
+
+    $(".fixed-top").slideUp('fast', function() {
+
+      $(".alternate-fixed-top").slideDown('fast', function() {
+        $(".add").slideDown(800);
+        $('.loading').css('display','block');
+
+        $.ajax({
+
+          url: select.attr("href"),
+          success: function(data) {
+            $('.add').append(data);
+            $('.loading').css('display','none');
+          }
+        })
+
+      });
+    });
+  });
+
+  $('#back-home').click(function(){
+    event.preventDefault();
+    $('.add').fadeOut(500);
+    $(".alternate-fixed-top").fadeOut(100);
+    $(".fixed-top").fadeIn(500);
+    $("html, body").animate({ scrollTop: 0 }, 400);
+      return false;
+
+  });
 });
 
-$('html').click(function(event){
-  event.preventDefault();
-  $('.add').fadeOut(1000);
-});
-
-$('.add-tags').click(function(event){
-    event.stopPropagation();
-});
 </script>
 
 <script>
-//change header when .add div is displayed
+// previous JQ
+// fix .add div
+function fixTabDiv() {
+    var $tabCache = $('.alternate-fixed-top');
 
-$(document).ready(function(){
+      if ($(window).scrollTop() > 140) {
+        $tabCache.css({'position': 'fixed', 'top': '0'});
+        $('.venue-content').css('margin-top','50px');
+      } else {
+        $tabCache.css({'position': 'relative', 'top': 'auto'});
+        $('.venue-content').css('margin-top','0');
+      }
 
- if ($('.add').css('display') !== 'none') {
-    console.log("hi"); 
-}
-  });
+  }
 
-// $(document).ready(function(){
-//   if ($('div.x').css('height') === 'auto') {
-//     $('.y').removeClass('a');
-//   }   
-
-// });
-
-
-
-  // translucentHeader();
-    // $cache.css({'position': 'fixed', 'top': '0'});
-  //   $('.venue-content').css('margin-top','50px');
-  // } else {
-  //   $cache.css({'position': 'relative', 'top': 'auto'});
-  //   $('.venue-content').css('margin-top','0');
-
-
-
-// $(window).scroll(fixDiv);
-
-// fixDiv();
+$(window).scroll(fixTabDiv);
+fixTabDiv();
 
 </script>
-
-
-<!-- some bullshit written by an idiot
-
-$('.more a:nth-child(2)').click(function(event){
-  event.preventDefault();
-  $('.add').fadeIn();
-  console.log('hahaha');
-
-}); -->
