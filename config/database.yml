@@ -4,14 +4,13 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-   adapter: postgresql
-   encoding: unicode
-   database: tailor
-   host: localhost
-   pool: 5
-   username: liorlight
-   password:
-
+  adapter: postgresql
+  encoding: unicode
+  database: tailor
+  host: localhost
+  pool: 5
+  username: liorlight
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
