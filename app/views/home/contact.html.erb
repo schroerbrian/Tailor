@@ -1,35 +1,25 @@
-   <section class="contact-container">
+<section class="contact-container">
 
   <% if flash[:success] %>
     <div class="success"><%= flash[:success] %></div>
   <% end %>
 
-      <div class="contactform">
+  <div class="contactform">
     <h1> We want to hear from you!</h1>
-<%= form_tag contact_submit_path do %>
-  <p class="name_label">
-   <%= label_tag :name %>
-   <br>
-   <br>
-   <%= text_field_tag :name %>
-  </p>
-  <br>
-  <br>
-  <p class="email_label">
-   <%= label_tag :email %>
-   <br>
-   <br>
-   <%= email_field_tag :email %>
-   <br>
-   <br>
-  </p>
-  <p class="comment">
-  <%= label_tag :content, "Note" %>
-  <br>
-  <br>
-  <%= text_area_tag :content %>
-  </p>
-  <p><%= submit_tag "Submit" %></p>
- <% end %>
-</div>
+    <%= form_tag contact_submit_path do %>
+    <div class="name_label">
+      <%= label_tag :name %>
+      <%= text_field_tag :name %>
+    </div>
+    <div class="email_label">
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+    </div>
+    <div class="comment">
+      <%= label_tag :content, "Note" %>
+      <%= text_area_tag :content %>
+    </div>
+    <div><%= submit_tag "Submit" %></div>
+    <% end %>
+  </div>
 </section>
