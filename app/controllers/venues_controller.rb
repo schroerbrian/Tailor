@@ -15,14 +15,23 @@ class VenuesController < ApplicationController
       @category = ['Tops','Bottoms', 'Dresses', 'Handbags', 'Bracelets', 'Belts', 'Scarves', 'Legwear', 'Sandals', 'Necklaces', 'Shoes']
     end
 
+    @venue = Venue.find_by_name(@title)
+
     @weather = wunderweather
 
-    if @venue = Venue.find_by_name(@title) #check w ian
+    venue_tag_ids = @venue.tags.map { |t| t.id }
+      @item_search = []
+      Item.all.each { |item| item_tag_ids = item.tags.map { |i| i.id }
+        @item_search << item if ((venue_tag_ids & item_tag_ids).count > 0) }
+
+    if @venue
       render 'index'
     else
       redirect_to '/'
     end
 
   end
+
+
 
 end

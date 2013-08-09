@@ -1,46 +1,32 @@
-<div class="show">
+<div class="items-container">
 
-  <div class="clothes">
-    <h3>Try these clothes</h3>
+<h2>What to wear at <%= @venue.name.titleize %> </h2>
 
-    <div class="items-container">
+  <div class="items">
 
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/d42652d7-2472-401c-85f7-f7c792dee96d.jpg" /></a>
-          <div class="likes">
-            <button>Like</button>
-          </div>
+    <% @item_search.each do |item| %>
+
+      <div class="tagged-item">
+
+        <div class="tagged-item-image">
+          <img src="<%= item[:img_url] %>" />
         </div>
+
+        <div class="tagged-items-text-info">
+          <div><%= item[:brand] %></div>
+          <div><%= item[:price] %></div>
+        </div>
+
       </div>
 
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/2cd3213a-cc49-43d9-92e5-11322931be8c.jpg" /></a>
-          <div class="likes">
-            <button>Like</button>
-          </div>
-        </div>
-      </div>
+    <% end %>
 
-      <div class="items-block">
-        <div class="items">
-          <a href="image_url"><img src="http://imagesecaw.ctscdn.com/image/263/375/65ca1960-82e2-4fb7-ad06-5200b499da7a.jpg" /></a>
+  </div>
 
-          <div class="likes">
-            <button>Like</button>
-          </div>
-        </div>
-      </div>
+  <div class="more">
+    <a href="#"><span class="entypo-right-open-big"></span></a></br>
+    <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @category, :tag => @venue.tags ) %>
     </div>
-
-    <div class="more">
-
-      <a href="#"><span class="entypo-right-open-big"></span></a></br>
-      <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @category.sample, :tag => @venue.tags ) %></div>
-
-    </div>
-
   </div>
 
 </div>

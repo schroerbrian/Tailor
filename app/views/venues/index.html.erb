@@ -31,7 +31,6 @@
 <div class="venue-content">
   <section class="venue-items-container">
     <%= render 'show' %>
-
     <div class="add">
     </div>
   </section>
@@ -154,8 +153,10 @@ $(document).ready(function() {
 
       $(".alternate-fixed-top").slideDown('fast', function() {
         $(".add").slideDown(800);
+
         addItem(select);
         scroll();
+
       });
 
     });
