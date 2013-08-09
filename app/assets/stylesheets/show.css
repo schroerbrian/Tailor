@@ -16,9 +16,10 @@
 
 .more {
   width: 70px;
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  top: 40%;
   right: 0;
+  margin-right: 8.5%;
   height: 100%;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .entypo-up-open-big {
-  margin-right: -32px;
+  margin-right: 41%;
 }
 
 /* dynamic items, images and items container shit */
