@@ -9,7 +9,6 @@ gem 'foreman'
 gem 'yelpster'
 gem 'json'
 gem 'pg'
-gem 'sqlite3'
 
 group :development, :test do
   gem 'pry'
