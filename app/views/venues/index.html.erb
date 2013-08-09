@@ -189,14 +189,12 @@ $(document).ready(function() {
     $('.more-items').remove();
 
     category = categories[Math.floor(Math.random()*categories.length)];
-    var reSelect = $('.add-tags').children();
-
-    // reg = /(?<=\=)(.*?)(?=\&)/
-    // var newThing = reSelect.replace(reg, encodeURIComponent(category));
-    //   //
+    var s = $('.add-tags').children().attr("href");
+    var newSelect = s.substring(s.indexOf("=")+1,s.indexOf("&"));
+    reSelect = s.replace(newSelect, encodeURIComponent(category));
 
     $.ajax({
-      url: reSelect.attr("href"),
+      url: reSelect,
       success: function(data) {
         $('.add').append(data);
         $('.add').append('<div class="more-items"><button>More</button></div>');

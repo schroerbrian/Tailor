@@ -64,8 +64,9 @@
   </div>
 </section>
 
-
-
+<div id="wrap">
+  <a href="#top" id="top-link"><span class="entypo-up-open-big"></span></a>
+</div>
 
 <script src="assets/bootstrap.js"></script>
 
@@ -74,16 +75,43 @@
 <% end %>
 
 <script>
+$(document).ready(function() {
+
+  jQuery.fn.topLink = function(settings) {
+    settings = jQuery.extend({
+      min: 1,
+      fadeSpeed: 100
+    }, settings);
+    return this.each(function() {
+      //listen for scroll
+      var el = jQuery(this);
+      el.hide(); //in case the user forgot
+      jQuery(window).scroll(function() {
+        if(jQuery(window).scrollTop() >= settings.min)
+        {
+          el.fadeIn(settings.fadeSpeed);
+        }
+        else
+        {
+          el.fadeOut(settings.fadeSpeed);
+        }
+      });
+    });
+  };
+
+  jQuery('#top-link').topLink({
+    min: 500,
+    fadeSpeed: 100
+  });
+
+  //smoothscroll
+  jQuery('#top-link').click(function(r) {
+    jQuery("html, body").animate({ scrollTop: 0 }, 300);
+  });
+
   $("#venue").autocomplete({
     source: venueNames
   });
-</script>
 
-<script>
-// $(document.body).click(function () {
-// console.log("hi");
-// $("html, body").animate({scrollTop:$(window).scrollTop() + 900});
-// return false;
-// });
-
+})
 </script>
