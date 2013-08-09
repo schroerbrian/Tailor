@@ -1,3 +1,4 @@
+
 class Venue < ActiveRecord::Base
   include Yelp::V2::Business::Request
   include Yelp::V2::Search::Request

@@ -29,7 +29,7 @@ namespace :yelpdata do
 
            businesses = response['businesses']
            puts(businesses)
-
+       
            businesses.each { |biz|
               v = Venue.find_by_name(biz['name'])
               if(v.nil?)

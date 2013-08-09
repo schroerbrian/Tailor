@@ -17,7 +17,6 @@
   min-height: 540px;
   position: relative;
   padding: 20px 0 20px 0;
-  height: 1024px;
 }
 
 
@@ -204,6 +203,7 @@
   margin: 0 auto;
   padding-top: 5%;
   text-align: center;
+  height: 90%;
 }
 
 .tags div span{
@@ -214,4 +214,5 @@
   display: inline;
   font-weight: 800;
   background: rgba(241, 196, 15,1.0);
+  float: left;
 }
