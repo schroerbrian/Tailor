@@ -222,6 +222,14 @@ $(document).ready(function() {
   $(window).scroll(fixTabDiv);
   fixTabDiv();
 
+// hover
+
+  $(".tagged-items-text-info").hover(function(){
+      $(this).animate({ bottom: '0' });
+    }, function() {
+        $(this).animate({ bottom: '-50px' });
+    });
+
 });
 
 </script>

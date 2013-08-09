@@ -40,12 +40,12 @@
 /* dynamic items, images and items container shit */
 
 .tagged-item {
-  width: 260px;
+  width: 250px;
   height: 315px;
   float: left;
   overflow: hidden;
   background: white;
-  margin: 19px;
+  margin: 10px;
   padding: 0;
   position: relative;
   border: 1px solid rgba(220,220,220,1);
@@ -68,7 +68,7 @@
   height: 120px;
   position: absolute;
   left: 0;
-  bottom: -81px;
+  bottom: -50px;
 }
 
 .tagged-items-text-info div:nth-child(1) {
