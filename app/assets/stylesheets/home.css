@@ -98,11 +98,20 @@ label {
   line-height: 30px;
 }
 
+label:hover {
+  background: rgba(157, 170, 171,1.0);
+  color: white;
+}
+
 input[type="radio"]:checked + label{
   background: rgba(127, 140, 141,1.0);;
   color: white;
 }
 
+input[type="radio"]:checked + label:hover {
+  background: rgba(127, 140, 141,1.0);;
+  color: white;
+}
 input[type="submit"] {
   background: rgba(127, 140, 141,1.0);
   font-weight: 800;
