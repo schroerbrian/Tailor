@@ -9,7 +9,6 @@ gem 'foreman'
 gem 'yelpster'
 gem 'json'
 gem 'pg'
-gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'pry'
