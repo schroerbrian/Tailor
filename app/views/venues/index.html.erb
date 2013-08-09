@@ -146,7 +146,7 @@ $(document).ready(function() {
 
   $(".add-tags").click(function(event){
     event.preventDefault();
-
+    $('.add-tags').fadeOut();
     var select = $(this).children();
 
     $(".fixed-top").slideUp('fast', function() {
@@ -164,6 +164,7 @@ $(document).ready(function() {
 
   $('#back-home').click(function(){
     close();
+    $('.add-tags').fadeIn();
   });
 
   $('#confirm').click(function(){
@@ -177,7 +178,7 @@ $(document).ready(function() {
         }
       });
     })
-    alert('saved');
+    alert('Your tags have been submitted.');
     close();
     window.location.reload();
   })
