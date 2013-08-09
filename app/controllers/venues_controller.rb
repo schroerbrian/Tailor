@@ -8,18 +8,30 @@ class VenuesController < ApplicationController
 
     @title = params[:venue]
     @gender = params[:gender]
-    @clothing_category = ['Tops','Bottoms', 'Jackets and Coats', 'Suits', 'Dresses'].sample #need to add more, also with logic that contains gender
-    @shoes_category = []
-    @accessories_category = []
+
+    if @gender == 'm'
+      @category = ['Tops','Bottoms', 'Belts', 'Shoes']
+    else
+      @category = ['Tops','Bottoms', 'Dresses', 'Handbags', 'Bracelets', 'Belts', 'Scarves', 'Legwear', 'Sandals', 'Necklaces', 'Shoes']
+    end
+
+    @venue = Venue.find_by_name(@title)
 
     @weather = wunderweather
 
-    if @venue = Venue.find_by_name(@title) #check w ian
+    venue_tag_ids = @venue.tags.map { |t| t.id }
+      @item_search = []
+      Item.all.each { |item| item_tag_ids = item.tags.map { |i| i.id }
+        @item_search << item if ((venue_tag_ids & item_tag_ids).count > 0) }
+
+    if @venue
       render 'index'
     else
       redirect_to '/'
     end
 
   end
+
+
 
 end

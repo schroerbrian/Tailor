@@ -1,4 +1,4 @@
-Taylor::Application.routes.draw do
+  Taylor::Application.routes.draw do
 
   root :to => 'home#index'
   get '/team' => 'home#team'

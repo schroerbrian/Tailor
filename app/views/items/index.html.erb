@@ -46,5 +46,9 @@ $('input[type="submit"]').click(function(event){
   $(this).css('background','black');
 })
 
+$("a img").error(function(){
+    $(this).parent().parent().parent().hide();
+})
+
 </script>
 

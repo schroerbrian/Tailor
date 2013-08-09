@@ -29,7 +29,7 @@
   <div class="heroes-2">
     <div class="blurb-2">
       <h1>Tailored inspiration</h1>
-      <h3>/ Intelligent algorithm that takes every factor into account: venue location, crowd and even weather. We pay attention so you don't have to /</h3>
+      <h3>Intelligent algorithm that takes every factor into account: venue location, crowd and even weather. We pay attention so you don't have to</h3>
     </div>
     <div class="image-2">
       <%= image_tag("shirts.png", :alt => :shirts) %>
@@ -46,7 +46,7 @@
 
     <div class="blurb-3">
       <h1>Powered by Zappos</h1>
-      <h3>/ Thousands of clothing items from Zappos curated under one view /</h3>
+      <h3>Thousands of clothing items from Zappos curated under one view</h3>
     <div>
   </div>
 </section>
@@ -55,7 +55,7 @@
   <div class="heroes-4">
     <div class="blurb-4">
       <h1>Tick Tock Tag</h1>
-      <h3>/ Are you a fashionista? Tag your outfits to your favorite venues /</h3>
+      <h3>Are you a fashionista? Tag your outfits to your favorite venues</h3>
     </div>
     <div class="image-4">
       <%= image_tag("tags.png")%>
@@ -64,7 +64,9 @@
   </div>
 </section>
 
-
+<div id="wrap">
+  <a href="#top" id="top-link"><span class="entypo-up-open-big"></span></a>
+</div>
 
 
 <%= javascript_tag do %>
@@ -72,7 +74,43 @@
 <% end %>
 
 <script>
+$(document).ready(function() {
+
+  jQuery.fn.topLink = function(settings) {
+    settings = jQuery.extend({
+      min: 1,
+      fadeSpeed: 100
+    }, settings);
+    return this.each(function() {
+      //listen for scroll
+      var el = jQuery(this);
+      el.hide(); //in case the user forgot
+      jQuery(window).scroll(function() {
+        if(jQuery(window).scrollTop() >= settings.min)
+        {
+          el.fadeIn(settings.fadeSpeed);
+        }
+        else
+        {
+          el.fadeOut(settings.fadeSpeed);
+        }
+      });
+    });
+  };
+
+  jQuery('#top-link').topLink({
+    min: 500,
+    fadeSpeed: 100
+  });
+
+  //smoothscroll
+  jQuery('#top-link').click(function(r) {
+    jQuery("html, body").animate({ scrollTop: 0 }, 300);
+  });
+
   $("#venue").autocomplete({
     source: venueNames
   });
+
+})
 </script>
