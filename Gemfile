@@ -9,7 +9,7 @@ gem 'foreman'
 gem 'yelpster'
 gem 'json'
 gem 'pg'
-gem 'twitter-bootstrap-rails'
+gem 'sqlite3'
 
 group :development, :test do
   gem 'pry'

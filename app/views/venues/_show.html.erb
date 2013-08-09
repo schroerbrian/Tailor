@@ -37,19 +37,10 @@
     <div class="more">
 
       <a href="#"><span class="entypo-right-open-big"></span></a></br>
-      <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @clothing_category, :tag => @venue.tags ) %></div>
+      <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @category.sample, :tag => @venue.tags ) %></div>
 
     </div>
 
-  </div>
-
-
-  <div class="shoes">
-    <h3>That goes with those shoes</h3>
-  </div>
-
-  <div class="accessories">
-    <h3>...and spiced up by those accessories</h3>
   </div>
 
 </div>
