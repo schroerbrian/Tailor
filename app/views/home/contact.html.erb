@@ -1,4 +1,9 @@
    <section>
+
+  <% if flash[:success] %>
+    <div class="success"><%= flash[:success] %></div>
+  <% end %>
+
       <div class="contactform">
     <h1> We want to hear from you!</h1>
 <%= form_tag contact_submit_path do %>

@@ -10,6 +10,6 @@ config.action_mailer.smtp_settings = {
   port:                 465,
   domain:               'example.com',
   user_name:            '<tailorapp>',
-  password:             '<Noodle123>',
+  password:             ENV['EMAIL_PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true  }
