@@ -35,4 +35,7 @@ Taylor::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf .jpg .png)
+
 end
