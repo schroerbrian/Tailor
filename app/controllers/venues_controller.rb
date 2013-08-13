@@ -23,6 +23,10 @@ class VenuesController < ApplicationController
       @item_search = []
       Item.all.each { |item| item_tag_ids = item.tags.map { |i| i.id }
         @item_search << item if ((venue_tag_ids & item_tag_ids).count > 0) }
+    
+    @item_search.select! { |item| 
+      item.gender == @gender 
+    }
 
     if @venue
       render 'index'
