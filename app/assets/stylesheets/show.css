@@ -41,7 +41,7 @@
 
 /* dynamic items, images and items container shit */
 
-.tagged-item {
+.tagged-item, .tagged-item-shoes, .tagged-item-tops {
   width: 250px;
   height: 315px;
   float: left;

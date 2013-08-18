@@ -1,6 +1,5 @@
 class VenuesController < ApplicationController
   include VenuesHelper
-  respond_to :json
 
   def index
   end
@@ -38,7 +37,7 @@ class VenuesController < ApplicationController
      categories.each { |category|   
      @names << category[0].name }
      @names.uniq!
-  
+    
     if @venue
       render 'index'
     else

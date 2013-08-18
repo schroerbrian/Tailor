@@ -1,13 +1,52 @@
 <div class="items-container">
 
 <h2>What to wear at <%= @venue.name.titleize %> </h2>
+  <select>
+    <% @names.each do |name|  %>
+    <option value="<%= name %>"><%= name %></option>
+    <% end %> 
+  </select>
 
+  hideAllDivs = function () {
+      $("#hourly").hide();
+      $("#per_diem").hide();
+      $("#fixed").hide();
+  };
+
+  handleNewSelection = function () {
+
+      hideAllDivs();
+      
+      switch ($(this).val()) {
+          case '1':
+              $("#hourly").show();
+          break;
+          case '2':
+              $("#per_diem").show();
+          break;
+          case '3':
+              $("#fixed").show();
+          break;
+      }
+  };
+
+  $(document).ready(function() {
+      
+      $("#project_billing_code_id").change(handleNewSelection);
+      
+      // Run the event handler once now to ensure everything is as it should be
+      handleNewSelection.apply($("#project_billing_code_id"));
+      
+  });
+
+</script>
+  
   <div class="items">
 
     <% @item_search.each do |item| %>
-
-      <div class="tagged-item">
-
+      <% @names.each do |name|  %>
+          
+     <div class="tagged-item-<%= name.downcase %>">
         <div class="tagged-item-image">
           <a href="<%= item[:item_url] %>" target="_blank"><img src="<%= item[:img_url] %>" /></a>
         </div>
@@ -16,9 +55,9 @@
           <div><%= item[:brand] %></div>
           <div><%= item[:price] %></div>
         </div>
-
-      </div>
-
+     </div>
+      
+      <% end %>
     <% end %>
 
   </div>
