@@ -1,8 +1,8 @@
 ---
 brian.jpg: brian-64d1161c7ad0ec3893a509979ae764fc.jpg
 brian/index.jpg: brian-64d1161c7ad0ec3893a509979ae764fc.jpg
-cafe.jpg: cafe-46186bf4ef40b5705e5689a358671c4e.jpg
-cafe/index.jpg: cafe-46186bf4ef40b5705e5689a358671c4e.jpg
+cafe.jpg: cafe-7b47add73051bc4cc26ab2c8575868b6.jpg
+cafe/index.jpg: cafe-7b47add73051bc4cc26ab2c8575868b6.jpg
 ian.jpg: ian-f70908417d64b772905222b86705d22b.jpg
 ian/index.jpg: ian-f70908417d64b772905222b86705d22b.jpg
 lauren.jpg: lauren-94e269fbdf345de536b73b37183c719a.jpg
@@ -17,17 +17,17 @@ new compy copy.png: new compy copy-3b2671dde863856f16fbeca8fe04c584.png
 new compy copy/index.png: new compy copy-3b2671dde863856f16fbeca8fe04c584.png
 shirts.png: shirts-b410fb3f205ee42a0dd99526c0113d35.png
 shirts/index.png: shirts-b410fb3f205ee42a0dd99526c0113d35.png
-shoes.jpg: shoes-70f2b3b0d712ba2bced2ae76c259b40b.jpg
-shoes/index.jpg: shoes-70f2b3b0d712ba2bced2ae76c259b40b.jpg
-styles.jpg: styles-637859a4901bd1fc6759621e0d8459bd.jpg
-styles/index.jpg: styles-637859a4901bd1fc6759621e0d8459bd.jpg
+shoes.jpg: shoes-790f23a2f0d01152af965e4cae450cd3.jpg
+shoes/index.jpg: shoes-790f23a2f0d01152af965e4cae450cd3.jpg
+styles.jpg: styles-2e745054da93059f826583491d4f68d3.jpg
+styles/index.jpg: styles-2e745054da93059f826583491d4f68d3.jpg
 tags.png: tags-b262763ac3aa2acf430661ed12b692ff.png
 tags/index.png: tags-b262763ac3aa2acf430661ed12b692ff.png
 zappos_matching.png: zappos_matching-aef470990ec112a29755033b6d1b5c8c.png
 zappos_matching/index.png: zappos_matching-aef470990ec112a29755033b6d1b5c8c.png
 application.js: application-f7b7c310db69dde0a1f189528027cabb.js
 application/index.js: application-f7b7c310db69dde0a1f189528027cabb.js
-application.css: application-d343a5a212bd721c00851cb8dc642700.css
-application/index.css: application-d343a5a212bd721c00851cb8dc642700.css
+application.css: application-f270d0d3a47f7eb709b787b70f6c5ec5.css
+application/index.css: application-f270d0d3a47f7eb709b787b70f6c5ec5.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map

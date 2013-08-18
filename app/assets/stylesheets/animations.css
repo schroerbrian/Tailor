@@ -1,0 +1,208 @@
+/*slidein*/
+@keyframes "slidein" {
+ from {
+    margin-top: -50px;
+ }
+ to {
+    margin-top: 0;
+ }
+
+}
+
+@-moz-keyframes slidein {
+ from {
+   margin-top: -50px;
+ }
+ to {
+   margin-top: 0;
+ }
+
+}
+
+@-webkit-keyframes "slidein" {
+ from {
+   margin-top: -50px;
+ }
+ to {
+   margin-top: 0;
+ }
+
+}
+
+@-ms-keyframes "slidein" {
+ from {
+   margin-top: -50px;
+ }
+ to {
+   margin-top: 0;
+ }
+
+}
+
+@-o-keyframes "slidein" {
+ from {
+   margin-top: -50px;
+ }
+ to {
+   margin-top: 0;
+ }
+
+}
+
+
+/*slideout*/
+@keyframes "slideout" {
+ from {
+    margin-top: 0;
+ }
+ to {
+    margin-top: -50px;
+ }
+
+}
+
+@-moz-keyframes slideout {
+ from {
+   margin-top: 0;
+ }
+ to {
+   margin-top: -50px;
+ }
+
+}
+
+@-webkit-keyframes "slideout" {
+ from {
+   margin-top: 0;
+ }
+ to {
+   margin-top: -50px;
+ }
+
+}
+
+@-ms-keyframes "slideout" {
+ from {
+   margin-top: 0;
+ }
+ to {
+   margin-top: -50px;
+ }
+
+}
+
+@-o-keyframes "slideout" {
+ from {
+   margin-top: 0;
+ }
+ to {
+   margin-top: -50px;
+ }
+
+}
+
+/*tab popdown*/
+
+@keyframes "popdown" {
+ from {
+    height: 0;
+ }
+ to {
+    height: 240px;
+ }
+
+}
+
+@-moz-keyframes popdown {
+ from {
+   height: 0;
+ }
+ to {
+   height: 240px;
+ }
+
+}
+
+@-webkit-keyframes "popdown" {
+ from {
+   height: 0;
+ }
+ to {
+   height: 240px;
+ }
+
+}
+
+@-ms-keyframes "popdown" {
+ from {
+   height: 0;
+ }
+ to {
+   height: 240px;
+ }
+
+}
+
+@-o-keyframes "popdown" {
+ from {
+   height: 0;
+ }
+ to {
+   height: 240px;
+ }
+
+}
+
+/*tab popup*/
+
+@keyframes "popup" {
+ from {
+    height: 240px;
+ }
+ to {
+    height: 0;
+ }
+
+}
+
+@-moz-keyframes popup {
+ from {
+   height: 240px;
+ }
+ to {
+   height: 0;
+ }
+
+}
+
+@-webkit-keyframes "popup" {
+ from {
+   height: 240px;
+ }
+ to {
+   height: 0;
+ }
+
+}
+
+@-ms-keyframes "popup" {
+ from {
+   height: 240px;
+ }
+ to {
+   height: 0;
+ }
+
+}
+
+@-o-keyframes "popup" {
+ from {
+   height: 240px;
+ }
+ to {
+   height: 0;
+ }
+
+}
+
+

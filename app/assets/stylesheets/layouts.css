@@ -40,8 +40,27 @@ a:link, a:visited {
 .menubar-container {
   background: black;
   height: 50px;
-  display: none;
   width: 100%;
+  display: block;
+  margin-top: -50px;
+}
+
+.opened {
+  animation: slidein .5s;
+  -webkit-animation: slidein .5s;
+  -moz-animation: slidein .5s;
+  -ms-animation: slidein .5s;
+  -o-animation: slidein .5s;
+  margin-top: 0;
+}
+
+.closed {
+  animation: slideout .5s;
+  -webkit-animation: slideout .5s;
+  -moz-animation: slideout .5s;
+  -ms-animation: slideout .5s;
+  -o-animation: slideout .5s;
+  margin-top: -50px;
 }
 
 .menubar-container .menubar {
@@ -77,6 +96,7 @@ a:link, a:visited {
 
 .menubar-container .menubar .nav-text ul li:hover {
   background: white;
+  color: rgba(60,60,60,1);
 }
 
 /*header*/
@@ -128,13 +148,6 @@ a:link, a:visited {
   text-align: center;
   background: rgba(40,40,40,1);
 }
-
-#top-link {
-  position: fixed;
-  bottom: 236px;
-  right: 10%;
-}
-
 
 .footer p {
   color: white;

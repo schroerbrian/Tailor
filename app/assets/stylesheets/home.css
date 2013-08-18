@@ -8,8 +8,10 @@
 
 /*main carousel*/
 .heroes-container-1 .heroes-1 {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /*search*/
@@ -247,3 +249,14 @@ input[type="submit"]:hover {
 .blurb-4 h3{
   margin-top: 10%;
 }
+
+/*top scroll*/
+
+#wrap {
+  position: fixed;
+  bottom: 80px;
+  right: 10%;
+  display: none;
+  width: 50px;
+}
+

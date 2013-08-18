@@ -4,6 +4,10 @@
     <div class="venue-menu">
       <h3><%= @venue.name.upcase %></h3>
       <ul>
+        <li class="more">
+          <div class="add-tags"><%= link_to '+', items_index_path(:gender => @gender, :category => @category.sample, :tag => @venue.tags ) %>
+          </div>
+        </li>
         <li><a href="#">Details</a></li>
         <li><a href="#">Weather</a></li>
         <li><a href="#">Tags</a></li>

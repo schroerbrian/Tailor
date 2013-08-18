@@ -1,6 +1,4 @@
-// fixed header on scroll
-
-$(document).ready(function() {
+$(function() {
 
   function fixDiv() {
   var $cache = $('.fixed-top');
@@ -32,52 +30,53 @@ $(document).ready(function() {
 
   // display tab modal
 
-  $('.venue-menu ul li:nth-child(1)').click(function(event){
+  $('.venue-tab').click(function(event){
     event.preventDefault();
-    $('.venue-tab').slideDown('slow');
-    $('.weather').css('display', 'none');
+    $('.venue-tab').removeClass('tab-opened');
+    $('.venue-tab').addClass('tab-closed');
+    $('.details').css('display', 'none');
     $('.tags').css('display', 'none');
-    $('.details').fadeIn();
-
-    $('.venue-menu ul li:nth-child(1)').css('background', 'rgba(250,250,250,1)');
-    $('.venue-menu ul li:nth-child(2)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(3)').css('background', 'transparent');
-
+    $('.weather').css('display', 'none');
+    $('.venue-menu ul li').removeClass('highlight');
   });
 
   $('.venue-menu ul li:nth-child(2)').click(function(event){
     event.preventDefault();
-    $('.venue-tab').slideDown('slow');
-    $('.details').css('display', 'none');
+    $('.venue-tab').removeClass('tab-closed');
+    $('.venue-tab').addClass('tab-opened');
+    $('.details').fadeIn();
     $('.tags').css('display', 'none');
-    $('.weather').fadeIn();
+    $('.weather').css('display', 'none');
 
-    $('.venue-menu ul li:nth-child(1)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(2)').css('background', 'rgba(250,250,250,1)');
-    $('.venue-menu ul li:nth-child(3)').css('background', 'transparent');
+    $('.venue-menu ul li').removeClass('highlight');
+    $(this).addClass('highlight');
 
   });
 
   $('.venue-menu ul li:nth-child(3)').click(function(event){
     event.preventDefault();
-    $('.venue-tab').slideDown('slow');
+    $('.venue-tab').removeClass('tab-closed');
+    $('.venue-tab').addClass('tab-opened');
+    $('.details').css('display', 'none');
+    $('.tags').css('display', 'none');
+    $('.weather').fadeIn();
+
+    $('.venue-menu ul li').removeClass('highlight');
+    $(this).addClass('highlight');
+
+  });
+
+  $('.venue-menu ul li:nth-child(4)').click(function(event){
+    event.preventDefault();
+    $('.venue-tab').removeClass('tab-closed');
+    $('.venue-tab').addClass('tab-opened');
     $('.details').css('display', 'none');
     $('.weather').css('display', 'none');
     $('.tags').fadeIn();
 
-    $('.venue-menu ul li:nth-child(1)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(2)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(3)').css('background', 'rgba(250,250,250,1)');
+    $('.venue-menu ul li').removeClass('highlight');
+    $(this).addClass('highlight');
 
-  });
-
-  $('.venue-tab').click(function(event){
-    event.preventDefault();
-    $('.venue-tab').slideUp('slow');
-
-    $('.venue-menu ul li:nth-child(1)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(2)').css('background', 'transparent');
-    $('.venue-menu ul li:nth-child(3)').css('background', 'transparent');
   });
 
   // display add modal
@@ -102,8 +101,7 @@ $(document).ready(function() {
   // closing the modal
   function close() {
     $('.add').slideUp('fast');
-    $('.zappos-items-container').remove();
-    $('.more-items').remove();
+    $('.add').empty();
     $(".alternate-fixed-top").slideUp('fast', function(){
       $(".fixed-top").slideDown('fast');
     });
