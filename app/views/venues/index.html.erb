@@ -1,19 +1,12 @@
 <div ng-app "categoryFilter" class="fixed-top">
-  <div class="categories"> <% categories = []  %>
-                            <% names = []  %>
-
-
-                            <% @item_search.each do |item| %>
-
-                            <% categories << item.categories %>
-                            <% end %>  
-                            <% categories.each { |category|   %>
-                            <%  names << category[0].name  }  %>
-                            <%  names.uniq!  %>
+  <div ng-controller="CategoryCtrl"> 
                      
-                        <p> <%= names %> </p>
+  <select>
+    <% @names.each do |name| %> 
+    <option value= <%= name %> > <%= name %> </option>
+    <% end %>
+  </select> 
 
- 
   </div>
   
   <div class="venue-menu-container">
