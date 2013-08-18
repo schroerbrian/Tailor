@@ -14,11 +14,11 @@ class Zapposclient
    options = {:gender => self.gender, :category => self.category}
    request = hot_items(options)
    results = request['results']
-   if results.empty?
-     options = {:category => category}
-     request = hot_items(options)
-     results = request['results']
-   end
+   # if results.empty?
+   #   options = {:category => category}
+   #   request = hot_items(options)
+   #   results = request['results']
+   # end
    @info = results.map { |r|
                     { :item => {
                     :name => r['productName'],
@@ -34,14 +34,22 @@ class Zapposclient
   def hot_items(options={})
     gender = options[:gender] if options.key?(:gender)
     category = options[:category]
-    if gender
-      filter = '&filters={"gender":'+'"'+"#{gender}" +'"'+  ',"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
-    else
-      filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
-    end
-    url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
+    gen = gender=='m' ? "men's" : "women's"
+    # if gender
+      #zappos disabled
+      #filter = '&filters={"gender":'+'"'+"#{gender}" +'"'+  ',"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
+
+    # else
+      #zappos disabled
+      #filter = '&filters={"categorization":{"categoryType":' + '"' + "#{category}" +'"'+ "}}"
+    # end
+      #zappos disabled
+      #url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
+    #new search
+    url = 'http://api.zappos.com/Search?term=' + "#{gen} #{category.downcase}"+'&sort={"productPopularity":"asc"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)
+
   end
 
   def image(id)
