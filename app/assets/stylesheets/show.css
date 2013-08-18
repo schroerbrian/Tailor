@@ -6,6 +6,20 @@
   min-height: 720px;
 }
 
+.category-dropdown {
+  position: absolute;
+  top: 1%;
+  right: 16%;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: rgba(127, 140, 141,1.0);
+  width: 260px;
+  height: 26px;
+  padding: 2px;
+  border: solid grey 1px;
+}
+
 .items {
   width: 880px;
   height: 100%;
@@ -41,7 +55,7 @@
 
 /* dynamic items, images and items container shit */
 
-.tagged-item, .tagged-item-shoes, .tagged-item-tops {
+.tagged-item {
   width: 250px;
   height: 315px;
   float: left;

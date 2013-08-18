@@ -1,52 +1,50 @@
 <div class="items-container">
 
 <h2>What to wear at <%= @venue.name.titleize %> </h2>
-  <select>
+  <select class="category-dropdown">
+      <option value="">Pick a category</option>
     <% @names.each do |name|  %>
-    <option value="<%= name %>"><%= name %></option>
-    <% end %> 
+      <option value="<%= name.downcase %>"><%= name %></option>
+    <% end %>
   </select>
-
-  hideAllDivs = function () {
-      $("#hourly").hide();
-      $("#per_diem").hide();
-      $("#fixed").hide();
+<script>
+  
+  showAllCategories = function () {
+      <% @names.each do |name| %>
+      $(".<%= name.downcase %>").hide();
+      <% end %>
   };
 
   handleNewSelection = function () {
 
-      hideAllDivs();
-      
+      showAllCategories();
+
       switch ($(this).val()) {
-          case '1':
-              $("#hourly").show();
+          <% @names.each do |name| %>
+          case "<%=name.downcase %>":
+              $(".<%= name.downcase %>").show();
           break;
-          case '2':
-              $("#per_diem").show();
-          break;
-          case '3':
-              $("#fixed").show();
-          break;
+          <% end %> 
       }
   };
 
   $(document).ready(function() {
       
-      $("#project_billing_code_id").change(handleNewSelection);
+      $(".category-dropdown").change(handleNewSelection);
       
-      // Run the event handler once now to ensure everything is as it should be
-      handleNewSelection.apply($("#project_billing_code_id"));
+      handleNewSelection.apply($(".category-dropdown"));
       
   });
 
-</script>
   
+
+</script>
+
   <div class="items">
 
     <% @item_search.each do |item| %>
-      <% @names.each do |name|  %>
           
-     <div class="tagged-item-<%= name.downcase %>">
+     <div class="tagged-item <%= item.categories[0].name.downcase %>">
         <div class="tagged-item-image">
           <a href="<%= item[:item_url] %>" target="_blank"><img src="<%= item[:img_url] %>" /></a>
         </div>
@@ -57,7 +55,6 @@
         </div>
      </div>
       
-      <% end %>
     <% end %>
 
   </div>
