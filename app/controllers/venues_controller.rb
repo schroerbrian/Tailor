@@ -6,7 +6,7 @@ class VenuesController < ApplicationController
 
   def search
 
-    @title = params[:venue]
+    @title = params[:venue].titleize
     @gender = params[:gender]
 
     if @gender == 'm'
@@ -23,7 +23,21 @@ class VenuesController < ApplicationController
       @item_search = []
       Item.all.each { |item| item_tag_ids = item.tags.map { |i| i.id }
         @item_search << item if ((venue_tag_ids & item_tag_ids).count > 0) }
+    
+    @item_search.select! { |item| 
+      item.gender == @gender 
+    }
 
+    categories = []  
+    @names = []  
+
+    @item_search.each  {|item|
+     categories << item.categories }   
+     
+     categories.each { |category|   
+     @names << category[0].name }
+     @names.uniq!
+    
     if @venue
       render 'index'
     else
