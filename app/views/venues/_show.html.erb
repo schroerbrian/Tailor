@@ -1,7 +1,7 @@
 <div class="items-container">
 
 <h2>What to wear at <%= @venue.name.titleize %> </h2>
-  <div id="dd" class="wrapper-dropdown" tabindex="1"> 
+  <div id="dd" class="wrapper-dropdown" tabindex="1">
     <select class="category-dropdown">
         <option value="">Pick a clothing category...</option>
       <% @names.each do |name|  %>
@@ -9,37 +9,11 @@
       <% end %>
       </select>
     </div>
-<script>
-  
-  showAllCategories = function () {
-      <% @names.each do |name| %>
-      $(".tagged-item").show();
-      <% end %>
-  };
-    
-  handleNewSelection = function () {
-      showAllCategories();
-      switch ($(this).val()) {
-          <% @names.each do |name| %>
-          case "<%=name.downcase %>":
-              $(".tagged-item").hide();
-              $("#<%= name.downcase %>").show();
-          break;
-          <% end %> 
-      }
-  };
-
-  $(document).ready(function() {
-      $(".category-dropdown").change(handleNewSelection);
-      handleNewSelection.apply($(".category-dropdown"));   
-  });
-
-</script>
 
   <div class="items">
 
     <% @item_search.each do |item| %>
-          
+
      <div class="tagged-item" id="<%= item.categories[0].name.downcase %>">
         <div class="tagged-item-image">
           <a href="<%= item[:item_url] %>" target="_blank"><img src="<%= item[:img_url] %>" /></a>
@@ -50,9 +24,38 @@
           <div><%= item[:price] %></div>
         </div>
      </div>
-      
+
     <% end %>
 
   </div>
 
 </div>
+
+<script>
+$(function(){
+
+  showAllCategories = function () {
+      <% @names.each do |name| %>
+      $(".tagged-item").show();
+      <% end %>
+  };
+
+  handleNewSelection = function () {
+      showAllCategories();
+      switch ($(this).val()) {
+          <% @names.each do |name| %>
+          case "<%=name.downcase %>":
+              $(".tagged-item").hide();
+              $("#<%= name.downcase %>").show();
+          break;
+          <% end %>
+      }
+  };
+
+  $(".category-dropdown").change(handleNewSelection);
+
+  handleNewSelection.apply($(".category-dropdown"));
+
+});
+
+</script>

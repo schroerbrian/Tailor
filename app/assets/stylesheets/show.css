@@ -10,7 +10,7 @@
     /* Size and position */
    position: absolute; /* Enable absolute positioning for children and pseudo elements */
    top: 1%;
-   right: -1%;
+   right: 0;
    width: 260px;
    height: 34px;
    overflow: hidden;
