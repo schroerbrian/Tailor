@@ -7,7 +7,7 @@ class VenuesController < ApplicationController
   def search
 
     # initial search and show
-    @title = params[:venue].titleize
+    @title = params[:venue]
     @gender = params[:gender]
 
     if @gender == 'm'
