@@ -1,4 +1,5 @@
 $(function() {
+"use strict";
 
   function fixDiv() {
   var $cache = $('.fixed-top');
