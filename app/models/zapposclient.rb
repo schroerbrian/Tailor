@@ -24,7 +24,7 @@ class Zapposclient
                     :name => r['productName'],
                     :brand => r['brandName'],
                     :price => r['price'],
-                    :item_url => r['defaultProductUrl'],
+                    :item_url => r['productUrl'],
                     :img_url => image(r['styleId']),
                     :gender => gender }
                   }

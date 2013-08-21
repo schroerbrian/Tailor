@@ -6,44 +6,45 @@
   min-height: 720px;
 }
 
+.wrapper-dropdown {
+    /* Size and position */
+   position: absolute; /* Enable absolute positioning for children and pseudo elements */
+   top: 1%;
+   right: 0;
+   width: 260px;
+   height: 34px;
+   overflow: hidden;
+   background: url(new-arrow.png) no-repeat right;
+}
+
+.category-dropdown {
+  background: transparent;
+  border-radius: 0;
+  color: #989898;
+  width: 260px;
+  height: 34px;
+  padding: 4px;
+  -webkit-appearance: none;
+}
+
+option {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
 .items {
-  width: 880px;
+  width: 100%;
   height: 100%;
   margin: 0;
   overflow: hidden;
 }
 
-/*more clickables*/
-
-.more {
-  width: 70px;
-  position: fixed;
-  top: 50%;
-  right: 0;
-  margin-right: 15%;
-  height: 100%;
-}
-
-.more [class*="entypo-"]:before {
-  font-size: 50px;
-  display: block;
-  margin-top: 80px;
-}
-
-.more a {
-  font-size: 50px;
-  color: black;
-}
-
-.entypo-up-open-big {
-  margin-right: 41%;
-}
-
 /* dynamic items, images and items container shit */
 
 .tagged-item {
-  width: 250px;
-  height: 315px;
+  width: 280px;
+  height: 320px;
   float: left;
   overflow: hidden;
   background: white;
@@ -71,6 +72,16 @@
   position: absolute;
   left: 0;
   bottom: -50px;
+  transition: bottom .2s ease-in-out;
+  -webkit-transition: bottom .2s ease-in-out;
+  -moz-transition: bottom .2s ease-in-out;
+  -o-transition: bottom .2s ease-in-out;
+  -ms-transition: bottom .2s ease-in-out;
+
+}
+
+.tagged-items-text-info:hover {
+  bottom: 0;
 }
 
 .tagged-items-text-info div:nth-child(1) {

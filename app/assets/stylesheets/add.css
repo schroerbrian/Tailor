@@ -124,8 +124,17 @@
   left: 0;
   bottom: -80px;
   background: rgba(236, 240, 241,0.9);
+  transition: bottom .2s ease-in-out;
+  -webkit-transition: bottom .2s ease-in-out;
+  -moz-transition: bottom .2s ease-in-out;
+  -o-transition: bottom .2s ease-in-out;
+  -ms-transition: bottom .2s ease-in-out;
 }
 
+.zappos-info:hover {
+  bottom: 0;
+}
+l
 .zappos-info input[type="submit"] {
   width: 100%;
 

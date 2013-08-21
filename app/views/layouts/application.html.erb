@@ -16,9 +16,9 @@
     <div class="menubar">
       <div class="nav-text">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="contact">Contact</a></li>
+          <a href="/"><li>Home</li></a>
+          <a href="/team"><li>Team</li></a>
+          <a href="contact"><li>Contact</li></a>
         </ul>
       </div>
     </div>
@@ -44,21 +44,4 @@
 </body>
 </html>
 
-<script>
-
-(function($){
-  $(function(){
-    var $itemContent = $(".menubar-container");
-    $(".entypo-menu").click(function(e){
-      e.preventDefault();
-      if($itemContent.hasClass('opened')){
-        $itemContent.slideUp('slow').toggleClass('closed opened');
-      } else {
-        $itemContent.slideDown('slow').toggleClass('closed opened');
-      }
-    });
-  });
-})(jQuery);
-
-</script>
-
+<%= javascript_include_tag 'layouts' %>

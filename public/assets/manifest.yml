@@ -1,8 +1,10 @@
 ---
+arrow.png: arrow-f80fc65404f913fc9f4f4be603612b97.png
+arrow/index.png: arrow-f80fc65404f913fc9f4f4be603612b97.png
 brian.jpg: brian-64d1161c7ad0ec3893a509979ae764fc.jpg
 brian/index.jpg: brian-64d1161c7ad0ec3893a509979ae764fc.jpg
-cafe.jpg: cafe-46186bf4ef40b5705e5689a358671c4e.jpg
-cafe/index.jpg: cafe-46186bf4ef40b5705e5689a358671c4e.jpg
+cafe.jpg: cafe-7b47add73051bc4cc26ab2c8575868b6.jpg
+cafe/index.jpg: cafe-7b47add73051bc4cc26ab2c8575868b6.jpg
 ian.jpg: ian-f70908417d64b772905222b86705d22b.jpg
 ian/index.jpg: ian-f70908417d64b772905222b86705d22b.jpg
 lauren.jpg: lauren-94e269fbdf345de536b73b37183c719a.jpg
@@ -15,19 +17,21 @@ mac.png: mac-121f5562db81c1c3fe550d50c169385e.png
 mac/index.png: mac-121f5562db81c1c3fe550d50c169385e.png
 new compy copy.png: new compy copy-3b2671dde863856f16fbeca8fe04c584.png
 new compy copy/index.png: new compy copy-3b2671dde863856f16fbeca8fe04c584.png
+new-arrow.png: new-arrow-e6658b1d060760590cde4b83f3288a4c.png
+new-arrow/index.png: new-arrow-e6658b1d060760590cde4b83f3288a4c.png
 shirts.png: shirts-b410fb3f205ee42a0dd99526c0113d35.png
 shirts/index.png: shirts-b410fb3f205ee42a0dd99526c0113d35.png
-shoes.jpg: shoes-70f2b3b0d712ba2bced2ae76c259b40b.jpg
-shoes/index.jpg: shoes-70f2b3b0d712ba2bced2ae76c259b40b.jpg
-styles.jpg: styles-637859a4901bd1fc6759621e0d8459bd.jpg
-styles/index.jpg: styles-637859a4901bd1fc6759621e0d8459bd.jpg
+shoes.jpg: shoes-790f23a2f0d01152af965e4cae450cd3.jpg
+shoes/index.jpg: shoes-790f23a2f0d01152af965e4cae450cd3.jpg
+styles.jpg: styles-2e745054da93059f826583491d4f68d3.jpg
+styles/index.jpg: styles-2e745054da93059f826583491d4f68d3.jpg
 tags.png: tags-b262763ac3aa2acf430661ed12b692ff.png
 tags/index.png: tags-b262763ac3aa2acf430661ed12b692ff.png
 zappos_matching.png: zappos_matching-aef470990ec112a29755033b6d1b5c8c.png
 zappos_matching/index.png: zappos_matching-aef470990ec112a29755033b6d1b5c8c.png
 application.js: application-f7b7c310db69dde0a1f189528027cabb.js
 application/index.js: application-f7b7c310db69dde0a1f189528027cabb.js
-application.css: application-9a9fca7124d3b0c884264971ceac16f9.css
-application/index.css: application-9a9fca7124d3b0c884264971ceac16f9.css
+application.css: application-adf4803da263e354c36a41583be4f305.css
+application/index.css: application-adf4803da263e354c36a41583be4f305.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map

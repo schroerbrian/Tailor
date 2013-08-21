@@ -9,12 +9,12 @@
     <div>
       <ul>
         <li><p><%= @venue.address_1 %>, <%= @venue.address_2 %></p></li>
-        <li><p><%= @venue.neighborhood_name %></p></li>
+        <li><p><%= @venue.neighborhood_name.titleize %></p></li>
         <li><p><%= @venue.rating.to_i %>/5</p></li>
     </div>
 
     <div>
-      <div><p>/ <%=@venue.snippet_text %> /</p></div>
+      <div><p> <%=@venue.snippet_text %> </p></div>
     </div>
 
   </div>
