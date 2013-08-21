@@ -134,16 +134,16 @@
 .zappos-info:hover {
   bottom: 0;
 }
-l
+
 .zappos-info input[type="submit"] {
   width: 100%;
-
   margin: 0;
   height: 40px;
   background: rgba(236, 240, 241,1.0);
   border-bottom: 1px solid white;
   font-weight: 400;
   font-size: 24px;
+  text-align: center;
   color: grey;
 }
 
