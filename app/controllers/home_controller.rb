@@ -1,6 +1,7 @@
-class HomeController < ApplicationController
+require ' json/pure'
 
-  def index
+class HomeController < ApplicationController
+   def index
     @venues = Venue.all
 
     @venue_names = []
