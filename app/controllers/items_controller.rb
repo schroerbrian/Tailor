@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
     z = Zapposclient.new({:category => @category, :gender => @gender})
     z.zappos_data
     @zappos_results = z.info
-
   end
 
   def new
