@@ -67,6 +67,6 @@ Taylor::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf .jpg .png)
+  config.assets.precompile += %w( .svg .eot .woff .ttf .jpg .png .js)
 
 end
