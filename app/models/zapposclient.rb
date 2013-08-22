@@ -46,7 +46,7 @@ class Zapposclient
       #zappos disabled
       #url = 'http://api.zappos.com/Statistics?type=latestStyles'+filter+'&location={"state":"ca","city":"San Francisco"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
     #new search
-    url = 'http://api.zappos.com/Search?term=' + "#{gen} #{category.downcase}"+'&sort={"productPopularity":"asc"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
+    url = 'http://api.zappos.com/Search?term=' + "#{gen} #{category.downcase}"+'&sort={"productPopularity":"desc"}&limit=27&key=' + "#{ENV['ZAPPOS_KEY']}"
     updated_url = URI.encode(url)
     result = JSON.parse(open(updated_url.strip).read)
 
