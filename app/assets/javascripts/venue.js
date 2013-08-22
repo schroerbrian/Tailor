@@ -157,10 +157,10 @@ $(function() {
     $('.loading').css('display','block');
     $('.more-items').remove();
 
-    category = categories[Math.floor(Math.random()*categories.length)];
+    var category = categories[Math.floor(Math.random()*categories.length)];
     var s = $('.add-tags').children().attr("href");
     var newSelect = s.substring(s.indexOf("=")+1,s.indexOf("&"));
-    reSelect = s.replace(newSelect, encodeURIComponent(category));
+    var reSelect = s.replace(newSelect, encodeURIComponent(category));
 
     $.ajax({
       url: reSelect,
