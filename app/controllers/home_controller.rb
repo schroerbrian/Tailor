@@ -1,4 +1,3 @@
-require ' json/pure'
 
 class HomeController < ApplicationController
    def index
