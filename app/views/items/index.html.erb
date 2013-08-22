@@ -1,4 +1,6 @@
 
+
+
 <div class="zappos-items-container">
   <% @zappos_results.each do |z| %>
 
@@ -17,7 +19,7 @@
           <%= f.hidden_field :gender, :value => z[:item][:gender]  %>
           <%= f.hidden_field :category, :value => @category %>
           <%= f.hidden_field :tag, :value => @tag %>
-          <%= f.submit "+" %>
+          <%= f.submit "+", :class => 'plus' %>
         <% end %>
 
         <div class="zappos-text-info">
