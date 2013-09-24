@@ -22,7 +22,7 @@ namespace :yelpdata do
            :token_secret => ENV['YELP_TOKEN_SECRET'])
 
            response = c.search(request)
-
+           
            if response["error"]
              raise response["error"]["text"]
            end
